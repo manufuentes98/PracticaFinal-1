@@ -1,9 +1,18 @@
 package vista;
 
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class PanelPedido {
+public class PanelPedido extends JPanel {
 
-  public JPanel PanelPedido;
+	protected JButton botonPedido;
+  
+	public PanelPedido() {
+		setLayout(new GridLayout(0, 1, 0, 0));
+		botonPedido = new JButton("Pedidos");
+		add(botonPedido);
+	}
 
 }
