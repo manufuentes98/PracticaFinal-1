@@ -1,13 +1,13 @@
 package acciones;
-import java.util.Vector;
+
+import control.Logica;
+import control.Puente;
 
 public class RegistrarPedido {
 
-  public logica Logica;
+  public Logica logica;
 
-  public puente Puente;
+  public Puente puente;
 
-    public Vector  myPuente;
-    public Vector  myLogica;
 
 }
