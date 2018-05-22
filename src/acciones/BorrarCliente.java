@@ -1,13 +1,12 @@
 package acciones;
-import java.util.Vector;
+
+import control.Logica;
+import control.Puente;
 
 public class BorrarCliente {
 
-  public logica Logica;
+	public Logica logica;
 
-  public puente Puente;
-
-    public Vector  myPuente;
-    public Vector  myLogica;
+	public Puente puente;
 
 }
