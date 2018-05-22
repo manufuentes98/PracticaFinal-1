@@ -8,6 +8,5 @@ public class BorrarCliente {
   public puente Puente;
 
     public Vector  myPuente;
-    public Vector  myLogica;
 
 }
