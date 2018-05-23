@@ -42,34 +42,34 @@ public class VistaPrincipal extends JFrame {
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		
-				JMenu mnArticulos = new JMenu("Articulos");
-				menuBar.add(mnArticulos);
-				
-				JMenuItem mntmDarDeAlta = new JMenuItem("Nuevo Articulo");
-				mnArticulos.add(mntmDarDeAlta);
-				
-				JMenuItem mntmBuscarArticulo = new JMenuItem("Buscar Articulo");
-				mnArticulos.add(mntmBuscarArticulo);
+
+		JMenu mnArticulos = new JMenu("Articulos");
+		menuBar.add(mnArticulos);
+
+		JMenuItem mntmDarDeAlta = new JMenuItem("Nuevo Articulo");
+		mnArticulos.add(mntmDarDeAlta);
+
+		JMenuItem mntmBuscarArticulo = new JMenuItem("Buscar Articulo");
+		mnArticulos.add(mntmBuscarArticulo);
 
 		JMenu mnClientes = new JMenu("Clientes");
 		menuBar.add(mnClientes);
-		
+
 		JMenuItem mntmDarAltaCliente = new JMenuItem("Nuevo Cliente");
 		mnClientes.add(mntmDarAltaCliente);
-		
+
 		JMenuItem mntmBuscarCliente = new JMenuItem("Buscar Cliente");
 		mnClientes.add(mntmBuscarCliente);
 
 		JMenu mnPedidos = new JMenu("Pedidos");
 		menuBar.add(mnPedidos);
-		
+
 		JMenuItem mntmNuevoPedido = new JMenuItem("Nuevo Pedido");
 		mnPedidos.add(mntmNuevoPedido);
-		
+
 		JMenuItem mntmBuscarPedido = new JMenuItem("Buscar Pedido");
 		mnPedidos.add(mntmBuscarPedido);
-		
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

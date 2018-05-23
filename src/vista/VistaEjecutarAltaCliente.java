@@ -21,7 +21,7 @@ public class VistaEjecutarAltaCliente extends JPanel{
 
 	public VistaEjecutarAltaCliente() {
 	
-		JLabel lblComprobacion = new JLabel("Usted se ha dado de alta correctamente");
+		lblComprobacion = new JLabel("Usted se ha dado de alta correctamente");
 		lblComprobacion.setHorizontalAlignment(SwingConstants.LEFT);
 		lblComprobacion.setFont(new Font("Sylfaen", Font.PLAIN, 17));
 		lblComprobacion.setVisible(false);
@@ -104,10 +104,11 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		btnValidar.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.RED));
 		btnValidar.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		GridBagConstraints gbc_btnValidar = new GridBagConstraints();
+		gbc_btnValidar.fill = GridBagConstraints.BOTH;
 		gbc_btnValidar.gridwidth = 4;
 		gbc_btnValidar.insets = new Insets(0, 0, 0, 5);
 		gbc_btnValidar.gridx = 6;
-		gbc_btnValidar.gridy = 11;
+		gbc_btnValidar.gridy = 9;
 		panel.add(btnValidar, gbc_btnValidar);
 	}
 
@@ -115,4 +116,5 @@ public class VistaEjecutarAltaCliente extends JPanel{
   private JTextField txtNombre;
   private JTextField txtDireccion;
   private JTextField txtTelefono;
+  private JLabel lblComprobacion;
 }
