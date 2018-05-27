@@ -13,17 +13,26 @@ import javax.swing.border.EtchedBorder;
 public class VistaAccederAltaArticulo extends JPanel {
 
 	protected JButton botonAltaArticulo;
+	protected VistaEjecutarAltaArticulo vistaEjecutarAltaArticulo=new VistaEjecutarAltaArticulo();
 
 	public VistaAccederAltaArticulo() {
+		vistaEjecutarAltaArticulo.getTextField_1().setHorizontalAlignment(SwingConstants.LEADING);
 		setLayout(new BorderLayout(0, 0));
-		JLabel lblAltaCliente = new JLabel("Alta Articulo");
-		lblAltaCliente.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		lblAltaCliente.setFont(new Font("David", Font.BOLD, 22));
-		lblAltaCliente.setHorizontalAlignment(SwingConstants.CENTER);
-		add(lblAltaCliente, BorderLayout.SOUTH);
-
+		JLabel lblAltaArticulo = new JLabel("Alta Articulo");
+		lblAltaArticulo.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		lblAltaArticulo.setFont(new Font("David", Font.BOLD, 22));
+		lblAltaArticulo.setHorizontalAlignment(SwingConstants.CENTER);
+		add(lblAltaArticulo, BorderLayout.SOUTH);
 		botonAltaArticulo = new JButton("");
 		add(botonAltaArticulo, BorderLayout.CENTER);
+	}
+
+	public VistaEjecutarAltaArticulo getVistaEjecutarAltaArticulo() {
+		return vistaEjecutarAltaArticulo;
+	}
+
+	public JButton getBotonAltaArticulo() {
+		return botonAltaArticulo;
 	}
 
 }

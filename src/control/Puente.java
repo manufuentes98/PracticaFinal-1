@@ -4,29 +4,44 @@ import acciones.BorrarCliente;
 import acciones.BuscarArticulo;
 import acciones.BuscarCliente;
 import acciones.ConsultarPedido;
+import acciones.ListenerAccederAltaArticulo;
+import acciones.ListenerAccederBuscarCliente;
 import acciones.ModificarArticulo;
+import acciones.RegistrarArticulo;
 import acciones.RegistrarCliente;
 import acciones.RegistrarPedido;
 import vista.VistaPrincipal;
 
-public class Puente extends  VistaPrincipal {
+public class Puente extends VistaPrincipal {
 
-  public ConsultarPedido consultarPedido;
+	private ConsultarPedido consultarPedido;
+	private BuscarArticulo buscadorArticulo;
+	private RegistrarCliente registrarCliente;
+	private BorrarCliente borrarCliente;
+	private ModificarArticulo modificarArticulo;
+	private BuscarCliente buscarCliente;
+	private RegistrarPedido registrarPedido;
+	private RegistrarArticulo registarArticulo;
+	private Logica logica;
+	private ListenerAccederAltaArticulo listenerAccederAltaArticulo;
+	private ListenerAccederBuscarCliente listenerAccederBuscarCliente;
 
-  public BuscarArticulo buscadorArticulo ;
+	public void asignarListener() {
+		registarArticulo = new RegistrarArticulo(this, this.panel);
+		listenerAccederAltaArticulo = new ListenerAccederAltaArticulo(this);
+		listenerAccederBuscarCliente = new ListenerAccederBuscarCliente(this);
+	}
 
-  public RegistrarCliente registrarCliente ;
-
-  public BorrarCliente borrarCliente ;
-
-  public ModificarArticulo modificarArticulo;
-
-  public  BuscarCliente buscarCliente;
-
-  public RegistrarPedido registrarPedido ;
-
-                           
-  public void asignarListener() {
-  }
+	public Puente() {
+		super();
+		asignarListener();
+		this.panelArticulo.getBotonArticulo().addActionListener(registarArticulo);
+		this.panelArticulo.getVistaAccederAltaArticulo().getBotonAltaArticulo()
+				.addActionListener(listenerAccederAltaArticulo);
+		this.panelArticulo.getVistaAccederBuscarArticulo().getBotonBuscarArticulo()
+				.addActionListener(listenerAccederBuscarCliente);
+		this.mntmDarDeAlta.addActionListener(listenerAccederAltaArticulo);
+		this.mntmBuscarArticulo.addActionListener(listenerAccederBuscarCliente);
+	}
 
 }

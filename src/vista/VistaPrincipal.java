@@ -11,27 +11,18 @@ import javax.swing.JMenu;
 import java.awt.GridLayout;
 import java.awt.CardLayout;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JMenuItem;
 
 public class VistaPrincipal extends JFrame {
 
-	private JPanel contentPane;
-	private PanelArticulo panelArticulo = new PanelArticulo();
-	private PanelCliente panelCliente = new PanelCliente();
-	private PanelPedido panelPedido = new PanelPedido();
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VistaPrincipal frame = new VistaPrincipal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	protected JPanel contentPane;
+	protected PanelArticulo panelArticulo = new PanelArticulo();
+	protected PanelCliente panelCliente = new PanelCliente();
+	protected PanelPedido panelPedido = new PanelPedido();
+	protected JPanel panel;
+	protected JMenuItem mntmDarDeAlta;
+	protected JMenuItem mntmBuscarArticulo;
 
 	/**
 	 * Create the frame.
@@ -46,10 +37,10 @@ public class VistaPrincipal extends JFrame {
 		JMenu mnArticulos = new JMenu("Articulos");
 		menuBar.add(mnArticulos);
 
-		JMenuItem mntmDarDeAlta = new JMenuItem("Nuevo Articulo");
+		mntmDarDeAlta = new JMenuItem("Nuevo Articulo");
 		mnArticulos.add(mntmDarDeAlta);
 
-		JMenuItem mntmBuscarArticulo = new JMenuItem("Buscar Articulo");
+		mntmBuscarArticulo = new JMenuItem("Buscar Articulo");
 		mnArticulos.add(mntmBuscarArticulo);
 
 		JMenu mnClientes = new JMenu("Clientes");
@@ -74,10 +65,30 @@ public class VistaPrincipal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 3, 0, 0));
-		contentPane.add(panelArticulo);
+
+		panel = new JPanel();
+		contentPane.add(panel);
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		panel.add(panelArticulo);
 		contentPane.add(panelCliente);
 		contentPane.add(panelPedido);
 
+	}
+
+	public JButton getBotonArticulo() {
+		return panelArticulo.getBotonArticulo();
+	}
+
+	public PanelArticulo getPanelArticulo() {
+		return panelArticulo;
+	}
+
+	public VistaAccederAltaArticulo getVistaAccederAltaArticulo() {
+		return panelArticulo.getVistaAccederAltaArticulo();
+	}
+
+	public VistaAccederBuscarArticulo getVistaAccederBuscarArticulo() {
+		return panelArticulo.getVistaAccederBuscarArticulo();
 	}
 
 }
