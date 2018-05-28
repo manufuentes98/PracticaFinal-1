@@ -9,7 +9,8 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.JButton;
 
 public class VistaAccederAltaCliente extends JPanel {
-	protected JButton button;
+	protected JButton btnAltaCliente;
+	protected VistaEjecutarAltaCliente VistaEjecutarAltaCliente=new VistaEjecutarAltaCliente();
 
 	public VistaAccederAltaCliente() {
 		setLayout(new BorderLayout(0, 0));
@@ -20,8 +21,18 @@ public class VistaAccederAltaCliente extends JPanel {
 		lblAltaCliente.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblAltaCliente, BorderLayout.SOUTH);
 
-		button = new JButton("");
-		add(button, BorderLayout.CENTER);
+		btnAltaCliente = new JButton("");
+		add(btnAltaCliente, BorderLayout.CENTER);
 	}
+
+	public JButton getBtnAltaCliente() {
+		return btnAltaCliente;
+	}
+
+
+	public VistaEjecutarAltaCliente getVistaEjecutarAltaCliente() {
+		return VistaEjecutarAltaCliente;
+	}
+
 
 }

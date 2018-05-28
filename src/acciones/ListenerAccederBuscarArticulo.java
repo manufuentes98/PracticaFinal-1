@@ -6,11 +6,10 @@ import java.awt.event.ActionListener;
 
 import control.Puente;
 
-public class ListenerAccederBuscarCliente implements ActionListener{
-
+public class ListenerAccederBuscarArticulo implements ActionListener {
 	private Puente puente;
 
-	public ListenerAccederBuscarCliente(Puente puente) {
+	public ListenerAccederBuscarArticulo(Puente puente) {
 		super();
 		this.puente = puente;
 	}
@@ -19,7 +18,7 @@ public class ListenerAccederBuscarCliente implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		puente.getContentPane().removeAll();
 		puente.getContentPane().setLayout(new BorderLayout(0, 0));
-		puente.getContentPane().add(puente.getVistaAccederBuscarCliente().getVistaEjecutarBuscarCliente());
+		puente.getContentPane().add(puente.getVistaAccederBuscarArticulo().getVistaEjecutarBuscarArticulo());
 		puente.repaint();
 		puente.revalidate();
 

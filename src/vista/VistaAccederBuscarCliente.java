@@ -8,6 +8,9 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
 
 public class VistaAccederBuscarCliente extends JPanel{
+	protected JButton btnBuscarCliente;
+	protected VistaEjecutarBuscarCliente VistaEjecutarBuscarCliente=new VistaEjecutarBuscarCliente();
+	
 	public VistaAccederBuscarCliente() {
 		setLayout(new BorderLayout(0, 0));
 		
@@ -22,5 +25,17 @@ public class VistaAccederBuscarCliente extends JPanel{
 	}
 
   public JPanel VistaAccederBuscarCliente;
+
+public JButton getBtnBuscarCliente() {
+	return btnBuscarCliente;
+}
+
+public VistaEjecutarBuscarCliente getVistaEjecutarBuscarCliente() {
+	return VistaEjecutarBuscarCliente;
+}
+
+public JPanel getVistaAccederBuscarCliente() {
+	return VistaAccederBuscarCliente;
+}
 
 }
