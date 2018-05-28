@@ -21,7 +21,7 @@ public class VistaEjecutarAltaCliente extends JPanel{
 
 	public VistaEjecutarAltaCliente() {
 	
-		lblComprobacion = new JLabel("Usted se ha dado de alta correctamente");
+		lblComprobacion = new JLabel("Mensaje:");
 		lblComprobacion.setHorizontalAlignment(SwingConstants.LEFT);
 		lblComprobacion.setFont(new Font("Sylfaen", Font.PLAIN, 17));
 		lblComprobacion.setVisible(false);
@@ -38,9 +38,9 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel.columnWeights = new double[]{0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
 		JLabel lblNombre = new JLabel("Nombre");
@@ -63,30 +63,31 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		panel.add(txtNombre, gbc_txtNombre);
 		txtNombre.setColumns(10);
 		
-		JLabel lblTelfono = new JLabel("Tel\u00E9fono");
-		lblTelfono.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		GridBagConstraints gbc_lblTelfono = new GridBagConstraints();
-		gbc_lblTelfono.anchor = GridBagConstraints.EAST;
-		gbc_lblTelfono.insets = new Insets(0, 0, 5, 5);
-		gbc_lblTelfono.gridx = 1;
-		gbc_lblTelfono.gridy = 5;
-		panel.add(lblTelfono, gbc_lblTelfono);
+		JLabel lblDnicif = new JLabel("DNI/CIF");
+		lblDnicif.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblDnicif.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		GridBagConstraints gbc_lblDnicif = new GridBagConstraints();
+		gbc_lblDnicif.anchor = GridBagConstraints.EAST;
+		gbc_lblDnicif.insets = new Insets(0, 0, 5, 5);
+		gbc_lblDnicif.gridx = 1;
+		gbc_lblDnicif.gridy = 4;
+		panel.add(lblDnicif, gbc_lblDnicif);
 		
-		txtTelefono = new JTextField();
-		GridBagConstraints gbc_txtTelefono = new GridBagConstraints();
-		gbc_txtTelefono.insets = new Insets(0, 0, 5, 5);
-		gbc_txtTelefono.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtTelefono.gridx = 2;
-		gbc_txtTelefono.gridy = 5;
-		panel.add(txtTelefono, gbc_txtTelefono);
-		txtTelefono.setColumns(10);
+		textField = new JTextField();
+		textField.setColumns(10);
+		GridBagConstraints gbc_textField = new GridBagConstraints();
+		gbc_textField.insets = new Insets(0, 0, 5, 5);
+		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField.gridx = 2;
+		gbc_textField.gridy = 4;
+		panel.add(textField, gbc_textField);
 		
 		JLabel lblDireccion = new JLabel("Direcci\u00F3n");
 		lblDireccion.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		GridBagConstraints gbc_lblDireccion = new GridBagConstraints();
 		gbc_lblDireccion.insets = new Insets(0, 0, 5, 5);
 		gbc_lblDireccion.gridx = 1;
-		gbc_lblDireccion.gridy = 8;
+		gbc_lblDireccion.gridy = 6;
 		panel.add(lblDireccion, gbc_lblDireccion);
 		
 		txtDireccion = new JTextField();
@@ -95,9 +96,27 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		gbc_txtDireccion.insets = new Insets(0, 0, 5, 5);
 		gbc_txtDireccion.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtDireccion.gridx = 2;
-		gbc_txtDireccion.gridy = 8;
+		gbc_txtDireccion.gridy = 6;
 		panel.add(txtDireccion, gbc_txtDireccion);
 		txtDireccion.setColumns(10);
+		
+		JLabel lblTelfono = new JLabel("Tel\u00E9fono");
+		lblTelfono.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		GridBagConstraints gbc_lblTelfono = new GridBagConstraints();
+		gbc_lblTelfono.anchor = GridBagConstraints.EAST;
+		gbc_lblTelfono.insets = new Insets(0, 0, 5, 5);
+		gbc_lblTelfono.gridx = 1;
+		gbc_lblTelfono.gridy = 8;
+		panel.add(lblTelfono, gbc_lblTelfono);
+		
+		txtTelefono = new JTextField();
+		GridBagConstraints gbc_txtTelefono = new GridBagConstraints();
+		gbc_txtTelefono.insets = new Insets(0, 0, 5, 5);
+		gbc_txtTelefono.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtTelefono.gridx = 2;
+		gbc_txtTelefono.gridy = 8;
+		panel.add(txtTelefono, gbc_txtTelefono);
+		txtTelefono.setColumns(10);
 		
 		JButton btnValidar = new JButton("Validar");
 		btnValidar.setIconTextGap(5);
@@ -106,9 +125,9 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		GridBagConstraints gbc_btnValidar = new GridBagConstraints();
 		gbc_btnValidar.fill = GridBagConstraints.BOTH;
 		gbc_btnValidar.gridwidth = 4;
-		gbc_btnValidar.insets = new Insets(0, 0, 0, 5);
+		gbc_btnValidar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnValidar.gridx = 6;
-		gbc_btnValidar.gridy = 9;
+		gbc_btnValidar.gridy = 10;
 		panel.add(btnValidar, gbc_btnValidar);
 	}
 
@@ -117,4 +136,5 @@ public class VistaEjecutarAltaCliente extends JPanel{
   private JTextField txtDireccion;
   private JTextField txtTelefono;
   private JLabel lblComprobacion;
+  private JTextField textField;
 }
