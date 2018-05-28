@@ -17,8 +17,8 @@ import java.awt.Insets;
 import javax.swing.JTextField;
 
 public class VistaEjecutarAltaArticulo extends JPanel {
-	protected JTextField textField;
-	protected JTextField textField_1;
+	private JTextField textNombreAltaArticulo;
+	private JTextField textDescripcionAltaArticulo;
 	private JLabel lblMensaje;
 
 	public VistaEjecutarAltaArticulo() {
@@ -53,27 +53,27 @@ public class VistaEjecutarAltaArticulo extends JPanel {
 		gbc_lblNewLabel.gridy = 4;
 		panel.add(lblNewLabel, gbc_lblNewLabel);
 
-		textField = new JTextField();
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.gridwidth = 7;
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridx = 4;
-		gbc_textField.gridy = 4;
-		panel.add(textField, gbc_textField);
-		textField.setColumns(10);
+		textNombreAltaArticulo = new JTextField();
+		GridBagConstraints gbc_textNombreArticulo = new GridBagConstraints();
+		gbc_textNombreArticulo.gridwidth = 7;
+		gbc_textNombreArticulo.insets = new Insets(0, 0, 5, 5);
+		gbc_textNombreArticulo.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textNombreArticulo.gridx = 4;
+		gbc_textNombreArticulo.gridy = 4;
+		panel.add(textNombreAltaArticulo, gbc_textNombreArticulo);
+		textNombreAltaArticulo.setColumns(10);
 
-		textField_1 = new JTextField();
-		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
-		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-		gbc_textField_1.gridheight = 3;
-		gbc_textField_1.gridwidth = 7;
-		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_1.fill = GridBagConstraints.BOTH;
-		gbc_textField_1.gridx = 4;
-		gbc_textField_1.gridy = 7;
-		panel.add(textField_1, gbc_textField_1);
-		textField_1.setColumns(10);
+		textDescripcionAltaArticulo = new JTextField();
+		textDescripcionAltaArticulo.setHorizontalAlignment(SwingConstants.CENTER);
+		GridBagConstraints gbc_textDescripcionArticulo = new GridBagConstraints();
+		gbc_textDescripcionArticulo.gridheight = 3;
+		gbc_textDescripcionArticulo.gridwidth = 7;
+		gbc_textDescripcionArticulo.insets = new Insets(0, 0, 5, 5);
+		gbc_textDescripcionArticulo.fill = GridBagConstraints.BOTH;
+		gbc_textDescripcionArticulo.gridx = 4;
+		gbc_textDescripcionArticulo.gridy = 7;
+		panel.add(textDescripcionAltaArticulo, gbc_textDescripcionArticulo);
+		textDescripcionAltaArticulo.setColumns(10);
 
 		JLabel lblDescripcion = new JLabel("Descripcion:");
 		GridBagConstraints gbc_lblDescripcion = new GridBagConstraints();
@@ -96,12 +96,12 @@ public class VistaEjecutarAltaArticulo extends JPanel {
 		panel.add(btnGuardar, gbc_btnGuardar);
 	}
 
-	public JTextField getTextField() {
-		return textField;
+	public JTextField getTextNombreAltaArticulo() {
+		return textNombreAltaArticulo;
 	}
 
-	public JTextField getTextField_1() {
-		return textField_1;
+	public JTextField getTextDescripcionAltaArticulo() {
+		return textDescripcionAltaArticulo;
 	}
 
 	public JLabel getLblMensaje() {
