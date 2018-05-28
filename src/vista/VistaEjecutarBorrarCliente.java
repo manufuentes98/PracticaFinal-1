@@ -45,6 +45,7 @@ public class VistaEjecutarBorrarCliente extends JPanel{
 		
 		txtId = new JTextField();
 		GridBagConstraints gbc_txtId = new GridBagConstraints();
+		gbc_txtId.gridwidth = 5;
 		gbc_txtId.insets = new Insets(0, 0, 5, 5);
 		gbc_txtId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtId.gridx = 4;
@@ -64,7 +65,7 @@ public class VistaEjecutarBorrarCliente extends JPanel{
 		GridBagConstraints gbc_txtNombre = new GridBagConstraints();
 		gbc_txtNombre.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtNombre.insets = new Insets(0, 0, 5, 5);
-		gbc_txtNombre.gridwidth = 10;
+		gbc_txtNombre.gridwidth = 12;
 		gbc_txtNombre.gridx = 4;
 		gbc_txtNombre.gridy = 6;
 		panel.add(txtNombre, gbc_txtNombre);
