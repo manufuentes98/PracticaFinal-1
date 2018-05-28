@@ -21,7 +21,6 @@ public class VistaPrincipal extends JFrame {
 	protected PanelArticulo panelArticulo = new PanelArticulo();
 	protected PanelCliente panelCliente = new PanelCliente();
 	protected PanelPedido panelPedido = new PanelPedido();
-	protected JPanel panel;
 	protected JMenuItem mntmDarDeAlta;
 	protected JMenuItem mntmBuscarArticulo;
 
@@ -64,10 +63,7 @@ public class VistaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 3, 0, 0));
 
-		panel = new JPanel();
-		contentPane.add(panel);
-		panel.setLayout(new GridLayout(0, 1, 0, 0));
-		panel.add(panelArticulo);
+		contentPane.add(panelArticulo);
 		contentPane.add(panelCliente);
 		contentPane.add(panelPedido);
 
