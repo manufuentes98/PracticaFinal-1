@@ -6,10 +6,10 @@ import java.awt.event.ActionListener;
 
 import control.Puente;
 
-public class ListenerAccederAltaCliente implements ActionListener{
+public class ListenerAccederAltaClientee implements ActionListener{
 	private Puente puente;
 
-	public ListenerAccederAltaCliente(Puente puente) {
+	public ListenerAccederAltaClientee(Puente puente) {
 		super();
 		this.puente = puente;
 	}

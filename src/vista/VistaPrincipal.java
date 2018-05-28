@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -20,13 +21,9 @@ public class VistaPrincipal extends JFrame {
 	protected PanelArticulo panelArticulo = new PanelArticulo();
 	protected PanelCliente panelCliente = new PanelCliente();
 	protected PanelPedido panelPedido = new PanelPedido();
-	protected JPanel panel;
 	protected JMenuItem mntmDarDeAlta;
 	protected JMenuItem mntmBuscarArticulo;
 
-	/**
-	 * Create the frame.
-	 */
 	public VistaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -66,10 +63,7 @@ public class VistaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 3, 0, 0));
 
-		panel = new JPanel();
-		contentPane.add(panel);
-		panel.setLayout(new GridLayout(0, 1, 0, 0));
-		panel.add(panelArticulo);
+		contentPane.add(panelArticulo);
 		contentPane.add(panelCliente);
 		contentPane.add(panelPedido);
 
@@ -79,8 +73,12 @@ public class VistaPrincipal extends JFrame {
 		return panelArticulo.getBotonArticulo();
 	}
 
-	public PanelArticulo getPanelArticulo() {
-		return panelArticulo;
+	public JTextField getTextNombreAltaArticulo() {
+		return panelArticulo.getTextNombreAltaArticulo();
+	}
+
+	public JTextField getTextDescripcionAltaArticulo() {
+		return panelArticulo.getTextDescripcionAltaArticulo();
 	}
 
 	public VistaAccederAltaArticulo getVistaAccederAltaArticulo() {
@@ -90,6 +88,7 @@ public class VistaPrincipal extends JFrame {
 	public VistaAccederBuscarArticulo getVistaAccederBuscarArticulo() {
 		return panelArticulo.getVistaAccederBuscarArticulo();
 	}
+
 
 	public PanelCliente getPanelCliente() {
 		return panelCliente;
@@ -104,4 +103,29 @@ public class VistaPrincipal extends JFrame {
 	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
 		return panelCliente.getVistaAccederBorrarCliente();
 	}
+
+	public JTextField getTextBuscarBuscarArticulo() {
+		return panelArticulo.getTextBuscarBuscarArticulo();
+	}
+
+	public JTextField getTextDescripcionBuscarArticulo() {
+		return panelArticulo.getTextDescripcionBuscarArticulo();
+	}
+
+	public JTextField getTextPrecioBuscarArticulo() {
+		return panelArticulo.getTextPrecioBuscarArticulo();
+	}
+
+	public VistaEjecutarAltaArticulo getVistaEjecutarAltaArticulo() {
+		return panelArticulo.getVistaEjecutarAltaArticulo();
+	}
+
+	public VistaEjecutarBuscarArticulo getVistaEjecutarBuscarArticulo() {
+		return panelArticulo.getVistaEjecutarBuscarArticulo();
+	}
+
+	public PanelArticulo getPanelArticulo() {
+		return panelArticulo;
+	}
+
 }

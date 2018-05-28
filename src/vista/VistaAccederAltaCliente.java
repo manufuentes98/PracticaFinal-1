@@ -9,8 +9,16 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.JButton;
 
 public class VistaAccederAltaCliente extends JPanel {
+
 	protected JButton btnAltaCliente;
 	protected VistaEjecutarAltaCliente VistaEjecutarAltaCliente=new VistaEjecutarAltaCliente();
+
+	
+	protected JButton button;
+
+	public JButton getButton() {
+		return button;
+	}
 
 	public VistaAccederAltaCliente() {
 		setLayout(new BorderLayout(0, 0));

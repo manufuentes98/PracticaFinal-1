@@ -1,14 +1,17 @@
 package control;
 
+import javax.swing.JPanel;
+
 import acciones.BorrarCliente;
 import acciones.BuscarArticulo;
 import acciones.BuscarCliente;
 import acciones.ConsultarPedido;
 import acciones.ListenerAccederAltaArticulo;
-import acciones.ListenerAccederAltaCliente;
+import acciones.ListenerAccederAltaClientee;
 import acciones.ListenerAccederBorrarCliente;
 import acciones.ListenerAccederBuscarArticulo;
 import acciones.ListenerAccederBuscarCliente;
+import acciones.ListenerMainArticulo;
 import acciones.ModificarArticulo;
 import acciones.RegistrarArticulo;
 import acciones.RegistrarCliente;
@@ -26,18 +29,20 @@ public class Puente extends VistaPrincipal {
 	private RegistrarPedido registrarPedido;
 	private RegistrarArticulo registarArticulo;
 	private Logica logica;
+	private ListenerMainArticulo listenerMainArticulo;
 	private ListenerAccederAltaArticulo listenerAccederAltaArticulo;
 	private ListenerAccederBuscarArticulo listenerAccederBuscarArticulo;
-	private ListenerAccederAltaCliente listenerAccederAltaCliente;
+	private ListenerAccederAltaClientee listenerAccederAltaCliente;
 	private ListenerAccederBuscarCliente listenerAccederBuscarCliente;
 	private ListenerAccederBorrarCliente listenerAccederBorrarCliente;
+	private JPanel panel;
 
 
 	public void asignarListener() {
-		registarArticulo = new RegistrarArticulo(this, this.panel);
+		listenerMainArticulo = new ListenerMainArticulo(this);
 		listenerAccederAltaArticulo = new ListenerAccederAltaArticulo(this);
 		listenerAccederBuscarArticulo = new ListenerAccederBuscarArticulo(this);
-		listenerAccederAltaCliente = new ListenerAccederAltaCliente(this);
+		listenerAccederAltaCliente = new ListenerAccederAltaClientee(this);
 		listenerAccederBuscarCliente = new ListenerAccederBuscarCliente(this);
 		listenerAccederBorrarCliente  = new ListenerAccederBorrarCliente(this);
 		registrarCliente = new RegistrarCliente(this, this.panel);
@@ -46,7 +51,7 @@ public class Puente extends VistaPrincipal {
 	public Puente() {
 		super();
 		asignarListener();
-		this.panelArticulo.getBotonArticulo().addActionListener(registarArticulo);
+		this.panelArticulo.getBotonArticulo().addActionListener(listenerMainArticulo);
 		this.panelArticulo.getVistaAccederAltaArticulo().getBotonAltaArticulo()
 				.addActionListener(listenerAccederAltaArticulo);
 		this.panelArticulo.getVistaAccederBuscarArticulo().getBotonBuscarArticulo()
