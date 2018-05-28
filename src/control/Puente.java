@@ -6,6 +6,7 @@ import acciones.BuscarCliente;
 import acciones.ConsultarPedido;
 import acciones.ListenerAccederAltaArticulo;
 import acciones.ListenerAccederBuscarCliente;
+import acciones.ListenerMainArticulo;
 import acciones.ModificarArticulo;
 import acciones.RegistrarArticulo;
 import acciones.RegistrarCliente;
@@ -23,11 +24,12 @@ public class Puente extends VistaPrincipal {
 	private RegistrarPedido registrarPedido;
 	private RegistrarArticulo registarArticulo;
 	private Logica logica;
+	private ListenerMainArticulo listenerMainArticulo;
 	private ListenerAccederAltaArticulo listenerAccederAltaArticulo;
 	private ListenerAccederBuscarCliente listenerAccederBuscarCliente;
 
 	public void asignarListener() {
-		registarArticulo = new RegistrarArticulo(this, this.panel);
+		listenerMainArticulo = new ListenerMainArticulo(this);
 		listenerAccederAltaArticulo = new ListenerAccederAltaArticulo(this);
 		listenerAccederBuscarCliente = new ListenerAccederBuscarCliente(this);
 	}
@@ -35,7 +37,7 @@ public class Puente extends VistaPrincipal {
 	public Puente() {
 		super();
 		asignarListener();
-		this.panelArticulo.getBotonArticulo().addActionListener(registarArticulo);
+		this.panelArticulo.getBotonArticulo().addActionListener(listenerMainArticulo);
 		this.panelArticulo.getVistaAccederAltaArticulo().getBotonAltaArticulo()
 				.addActionListener(listenerAccederAltaArticulo);
 		this.panelArticulo.getVistaAccederBuscarArticulo().getBotonBuscarArticulo()
