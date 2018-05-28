@@ -17,7 +17,7 @@ public class ListenerAccederAltaArticulo implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		puente.getContentPane().removeAll();
 		puente.getContentPane().setLayout(new BorderLayout(0, 0));
-		puente.getContentPane().add(puente.getVistaAccederAltaArticulo().getVistaEjecutarAltaArticulo());
+		puente.getContentPane().add(puente.getVistaEjecutarAltaArticulo());
 		puente.repaint();
 		puente.revalidate();
 

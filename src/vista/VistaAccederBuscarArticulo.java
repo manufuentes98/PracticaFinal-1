@@ -21,8 +21,8 @@ import java.awt.Insets;
 
 public class VistaAccederBuscarArticulo extends JPanel {
 
-	protected JButton botonBuscarArticulo;
-	protected VistaEjecutarBuscarArticulo vistaEjecutarBuscarArticulo = new VistaEjecutarBuscarArticulo();
+	private JButton botonBuscarArticulo;
+	private VistaEjecutarBuscarArticulo vistaEjecutarBuscarArticulo = new VistaEjecutarBuscarArticulo();
 
 	public VistaAccederBuscarArticulo() {
 		setLayout(new BorderLayout(0, 0));
@@ -41,6 +41,18 @@ public class VistaAccederBuscarArticulo extends JPanel {
 
 	public VistaEjecutarBuscarArticulo getVistaEjecutarBuscarArticulo() {
 		return vistaEjecutarBuscarArticulo;
+	}
+
+	public JTextField getTextBuscarBuscarArticulo() {
+		return vistaEjecutarBuscarArticulo.getTextBuscarBuscarArticulo();
+	}
+
+	public JTextField getTextDescripcionBuscarArticulo() {
+		return vistaEjecutarBuscarArticulo.getTextDescripcionBuscarArticulo();
+	}
+
+	public JTextField getTextPrecioBuscarArticulo() {
+		return vistaEjecutarBuscarArticulo.getTextPrecioBuscarArticulo();
 	}
 
 }
