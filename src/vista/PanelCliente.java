@@ -8,29 +8,33 @@ import javax.swing.JPanel;
 public class PanelCliente extends JPanel {
 
 	protected JButton BotonCliente;
-	private VistaAccederAltaCliente VistaAccederAltaCliente;
-	private VistaAccederBuscarCliente VistaAccederBuscarCliente;
-	private VistaAccederBorrarCliente VistaAccederBorrarCliente;
-
+	private VistaAccederAltaCliente vistaAccederAltaCliente = new VistaAccederAltaCliente();
+	private VistaAccederBuscarCliente vistaAccederBuscarCliente = new VistaAccederBuscarCliente();
+	private VistaAccederBorrarCliente vistaAccederBorrarCliente = new VistaAccederBorrarCliente();
 
 	public PanelCliente() {
 		setLayout(new GridLayout(0, 1, 0, 0));
 		BotonCliente = new JButton("Clientes");
 		add(BotonCliente);
 	}
+
 	public VistaAccederAltaCliente getVistaAccederAltaCliente() {
-		return VistaAccederAltaCliente;
+		return vistaAccederAltaCliente;
 	}
 
 	public VistaAccederBuscarCliente getVistaAccederBuscarCliente() {
-		return VistaAccederBuscarCliente;
+		return vistaAccederBuscarCliente;
 	}
 
 	public JButton getBotonCliente() {
 		return BotonCliente;
 	}
+
 	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
-		return VistaAccederBorrarCliente;
+		return vistaAccederBorrarCliente;
+	}
+	public JButton getBtnBorrarCliente() {
+		return vistaAccederBorrarCliente.getBtnBorrarCliente();
 	}
 
 }
