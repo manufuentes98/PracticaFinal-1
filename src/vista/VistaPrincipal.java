@@ -89,6 +89,21 @@ public class VistaPrincipal extends JFrame {
 		return panelArticulo.getVistaAccederBuscarArticulo();
 	}
 
+
+	public PanelCliente getPanelCliente() {
+		return panelCliente;
+	}
+	public VistaAccederAltaCliente getVistaAccederAltaCliente() {
+		return panelCliente.getVistaAccederAltaCliente();
+	}
+
+	public VistaAccederBuscarCliente getVistaAccederBuscarCliente() {
+		return panelCliente.getVistaAccederBuscarCliente();
+	}
+	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
+		return panelCliente.getVistaAccederBorrarCliente();
+	}
+
 	public JTextField getTextBuscarBuscarArticulo() {
 		return panelArticulo.getTextBuscarBuscarArticulo();
 	}
