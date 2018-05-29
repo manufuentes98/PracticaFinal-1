@@ -20,11 +20,9 @@ public class VistaAccederBuscarCliente extends JPanel{
 		lblNewLabel.setFont(new Font("David", Font.BOLD, 22));
 		add(lblNewLabel, BorderLayout.SOUTH);
 		
-		JButton button = new JButton("");
-		add(button, BorderLayout.CENTER);
+		btnBuscarCliente = new JButton("");
+		add(btnBuscarCliente, BorderLayout.CENTER);
 	}
-
-  public JPanel VistaAccederBuscarCliente;
 
 public JButton getBtnBuscarCliente() {
 	return btnBuscarCliente;
@@ -32,10 +30,6 @@ public JButton getBtnBuscarCliente() {
 
 public VistaEjecutarBuscarCliente getVistaEjecutarBuscarCliente() {
 	return VistaEjecutarBuscarCliente;
-}
-
-public JPanel getVistaAccederBuscarCliente() {
-	return VistaAccederBuscarCliente;
 }
 
 }

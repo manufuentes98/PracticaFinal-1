@@ -20,13 +20,13 @@ public class PanelArticulo extends JPanel {
 
 	public PanelArticulo() {
 		setLayout(new BorderLayout(0, 0));
-		
+
 		panel = new JPanel();
 		add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		botonArticulo = new JButton("");
 		panel.add(botonArticulo);
-		
+
 		lblArticulos = new JLabel("ARTICULOS");
 		lblArticulos.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblArticulos.setHorizontalAlignment(SwingConstants.CENTER);
@@ -79,5 +79,13 @@ public class PanelArticulo extends JPanel {
 
 	public VistaEjecutarBuscarArticulo getVistaEjecutarBuscarArticulo() {
 		return vistaAccederBuscarArticulo.getVistaEjecutarBuscarArticulo();
+	}
+
+	public JButton getBotonBuscarArticulo() {
+		return vistaAccederBuscarArticulo.getBotonBuscarArticulo();
+	}
+
+	public JButton getBotonAltaArticulo() {
+		return vistaAccederAltaArticulo.getBotonAltaArticulo();
 	}
 }
