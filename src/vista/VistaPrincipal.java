@@ -22,6 +22,12 @@ public class VistaPrincipal extends JFrame {
 	protected PanelCliente panelCliente = new PanelCliente();
 	protected PanelPedido panelPedido = new PanelPedido();
 	protected JMenuItem mntmDarDeAlta;
+	public JButton getBotonPedido() {
+		return panelPedido.getBotonPedido();
+	}
+
+	
+
 	protected JMenuItem mntmBuscarArticulo;
 
 	public VistaPrincipal() {
@@ -128,4 +134,31 @@ public class VistaPrincipal extends JFrame {
 		return panelArticulo;
 	}
 
+	public void setBotonPedido(JButton botonPedido) {
+		panelPedido.setBotonPedido(botonPedido);
+	}
+
+	public VistaAccederAltaPedido getVistaAccederAltaPedido() {
+		return panelPedido.getVistaAccederAltaPedido();
+	}
+
+	public void setVistaAccederAltaPedido(VistaAccederAltaPedido vistaAccederAltaPedido) {
+		panelPedido.setVistaAccederAltaPedido(vistaAccederAltaPedido);
+	}
+
+	public VistaAccederPedido getVistaAccederPedido() {
+		return panelPedido.getVistaAccederPedido();
+	}
+
+	public void setVistaAccederPedido(VistaAccederPedido vistaAccederPedido) {
+		panelPedido.setVistaAccederPedido(vistaAccederPedido);
+	}
+
+	public PanelPedido getPanelPedido() {
+		return panelPedido;
+	}
+
+	public void setPanelPedido(PanelPedido panelPedido) {
+		this.panelPedido = panelPedido;
+	}
 }

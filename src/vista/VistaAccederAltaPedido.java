@@ -7,14 +7,54 @@ import javax.swing.BoxLayout;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class VistaAccederAltaPedido extends JPanel {
+	private JButton btnAccederAltaPedido;
+	private VistaEjecutarAltaPedido vistaEjecutarAltaPedido;
+
 	public VistaAccederAltaPedido() {
-		setLayout(new GridLayout(1, 0, 0, 0));
-		
-		JButton btnNewButton = new JButton("Alta Pedido");
-		add(btnNewButton);
+		vistaEjecutarAltaPedido = new VistaEjecutarAltaPedido();
+		btnAccederAltaPedido = new JButton("");
+		btnAccederAltaPedido.setIcon(new ImageIcon(VistaAccederAltaPedido.class
+				.getResource("/com/sun/javafx/webkit/prism/resources/mediaVolumeThumb.png")));
+		btnAccederAltaPedido.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		setLayout(new BorderLayout(0, 0));
+		add(btnAccederAltaPedido);
+
+		JLabel lblNewLabel = new JLabel("Alta Pedido");
+		add(lblNewLabel, BorderLayout.SOUTH);
 	}
 
-  public JPanel VistaAccederAltaPedido;
+	public JButton getBtnAccederAltaPedido() {
+		return btnAccederAltaPedido;
+	}
+
+	public void setBtnAccederAltaPedido(JButton btnAccederAltaPedido) {
+		this.btnAccederAltaPedido = btnAccederAltaPedido;
+	}
+
+	public JPanel getVistaAccederAltaPedido() {
+		return VistaAccederAltaPedido;
+	}
+
+	public VistaEjecutarAltaPedido getVistaEjecutarAltaPedido() {
+		return vistaEjecutarAltaPedido;
+	}
+
+	public void setVistaEjecutarAltaPedido(VistaEjecutarAltaPedido vistaEjecutarAltaPedido) {
+		this.vistaEjecutarAltaPedido = vistaEjecutarAltaPedido;
+	}
+
+	public void setVistaAccederAltaPedido(JPanel vistaAccederAltaPedido) {
+		VistaAccederAltaPedido = vistaAccederAltaPedido;
+	}
+
+	public JPanel VistaAccederAltaPedido;
 }
