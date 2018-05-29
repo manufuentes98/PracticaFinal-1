@@ -10,19 +10,18 @@ import control.Puente;
 
 public class RegistrarCliente implements ActionListener{
 	private Puente puente;
-	private JPanel panel;
 	
-	public RegistrarCliente(Puente puente,JPanel panel) {
+	public RegistrarCliente(Puente puente) {
 		super();
 		this.puente = puente;
-		this.panel=panel;
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		panel.remove(puente.getPanelCliente());
-		panel.add(puente.getVistaAccederAltaCliente());
-		panel.add(puente.getVistaAccederBuscarCliente());
+		puente.remove(puente.getPanelCliente());
+		puente.getPanelCliente().remove(puente.getPanelCliente());
+		puente.add(puente.getVistaAccederAltaCliente());
+		puente.add(puente.getVistaAccederBuscarCliente());
 		puente.repaint();
-		panel.revalidate();
+		puente.revalidate();
 	}
 }

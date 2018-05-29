@@ -18,9 +18,6 @@ import java.awt.Font;
 public class VistaEjecutarBuscarCliente extends JFrame{
 	private JTextField textField;
 
-
-	
-
 	/**
 	 * Create the frame.
 	 */
