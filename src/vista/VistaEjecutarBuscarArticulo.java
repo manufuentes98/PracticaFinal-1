@@ -12,6 +12,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.SwingConstants;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.EtchedBorder;
+import java.awt.SystemColor;
 
 public class VistaEjecutarBuscarArticulo extends JPanel {
 
@@ -21,30 +26,10 @@ public class VistaEjecutarBuscarArticulo extends JPanel {
 	private JTable table;
 
 	public VistaEjecutarBuscarArticulo() {
+		setBackground(SystemColor.activeCaption);
 		setLayout(new BorderLayout(0, 0));
-
-		JPanel panel = new JPanel();
-		add(panel, BorderLayout.NORTH);
-
-		JLabel lblIntroduceElTexto = new JLabel("Introduce el texto:");
-		lblIntroduceElTexto.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		panel.add(lblIntroduceElTexto);
-
-		textBuscarBuscarArticulo = new JTextField();
-		panel.add(textBuscarBuscarArticulo);
-		textBuscarBuscarArticulo.setColumns(10);
-
-		JPanel panel_1 = new JPanel();
-		add(panel_1, BorderLayout.CENTER);
-		panel_1.setLayout(new BorderLayout(0, 0));
-
-		JScrollPane scrollPane = new JScrollPane();
-		panel_1.add(scrollPane, BorderLayout.CENTER);
 		String[] nombresColumnas = { "Nombre" };
 		String data[][] = { { "1" } };
-		table = new JTable(new DefaultTableModel(data, nombresColumnas));
-		table.setEnabled(false);
-		scrollPane.setViewportView(table);
 
 		JPanel panel_2 = new JPanel();
 		add(panel_2, BorderLayout.SOUTH);
@@ -94,6 +79,36 @@ public class VistaEjecutarBuscarArticulo extends JPanel {
 		gbc_textFieldPrecio.gridy = 5;
 		panel_2.add(textPrecioBuscarArticulo, gbc_textFieldPrecio);
 		textPrecioBuscarArticulo.setColumns(10);
+
+		JPanel panel_3 = new JPanel();
+		add(panel_3, BorderLayout.CENTER);
+		panel_3.setLayout(new BorderLayout(0, 0));
+
+		JPanel panel = new JPanel();
+		panel_3.add(panel, BorderLayout.NORTH);
+
+		JLabel lblIntroduceElTexto = new JLabel("Introduce el texto:");
+		lblIntroduceElTexto.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		panel.add(lblIntroduceElTexto);
+
+		textBuscarBuscarArticulo = new JTextField();
+		panel.add(textBuscarBuscarArticulo);
+		textBuscarBuscarArticulo.setColumns(10);
+
+		JPanel panel_1 = new JPanel();
+		panel_3.add(panel_1, BorderLayout.CENTER);
+		panel_1.setLayout(new BorderLayout(0, 0));
+
+		JScrollPane scrollPane = new JScrollPane();
+		panel_1.add(scrollPane, BorderLayout.CENTER);
+		table = new JTable(new DefaultTableModel(data, nombresColumnas));
+		table.setEnabled(false);
+		scrollPane.setViewportView(table);
+
+		JLabel lblBuscarArticulo = new JLabel("Buscar Articulo");
+		lblBuscarArticulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBuscarArticulo.setFont(new Font("Gentium Book Basic", Font.BOLD | Font.ITALIC, 36));
+		add(lblBuscarArticulo, BorderLayout.NORTH);
 	}
 
 	public JTextField getTextBuscarBuscarArticulo() {
