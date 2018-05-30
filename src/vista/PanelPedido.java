@@ -1,7 +1,5 @@
 package vista;
 
-import java.awt.GridLayout;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -11,9 +9,22 @@ import javax.swing.SwingConstants;
 
 public class PanelPedido extends JPanel {
 
+
+
+
 	private JButton botonPedido;
 	private VistaAccederAltaPedido vistaAccederAltaPedido = new VistaAccederAltaPedido();
 	private VistaAccederPedido vistaAccederPedido = new VistaAccederPedido();
+	private JLabel lblPedidos;
+	private JPanel panelPedido;
+	
+
+	public JButton getBtnConsultarPedidos() {
+		return vistaAccederPedido.getBtnConsultarPedidos();
+	}
+	public JButton getBtnAccederAltaPedido() {
+		return vistaAccederAltaPedido.getBtnAccederAltaPedido();
+	}
   
 	public JButton getBotonPedido() {
 		return botonPedido;
@@ -44,9 +55,21 @@ public class PanelPedido extends JPanel {
 		botonPedido = new JButton("");
 		add(botonPedido);
 		
-		JLabel lblPedidos = new JLabel("PEDIDOS");
+		 lblPedidos = new JLabel("PEDIDOS");
 		lblPedidos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPedidos.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(lblPedidos, BorderLayout.SOUTH);
+	}
+	public JLabel getLblPedidos() {
+		return lblPedidos;
+	}
+	public void setLblPedidos(JLabel lblPedidos) {
+		this.lblPedidos = lblPedidos;
+	}
+	public JPanel getPanelPedido() {
+		return panelPedido;
+	}
+	public void setPanelPedido(JPanel panel) {
+		this.panelPedido = panel;
 	}
 }

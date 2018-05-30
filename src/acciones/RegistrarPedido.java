@@ -9,19 +9,18 @@ import control.Puente;
 
 public class RegistrarPedido implements ActionListener {
 	private Puente puente;
-	private JPanel panel;
-	public RegistrarPedido(Puente puente, JPanel panel) {
+	public RegistrarPedido(Puente puente) {
 		super();
 		this.puente= puente;
-		this.panel =panel;
+	
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		panel.remove(puente.getPanelPedido());
-		panel.add(puente.getVistaAccederAltaPedido());
-		panel.add(puente.getVistaAccederPedido());
-		puente.repaint();
-		panel.revalidate();
+		//panel.remove(puente.getPanelPedido());
+		//panel.add(puente.getVistaAccederAltaPedido());
+		//panel.add(puente.getVistaAccederPedido());
+		//puente.repaint();
+		//panel.revalidate();
 	}
 	
 }
