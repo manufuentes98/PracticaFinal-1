@@ -77,6 +77,8 @@ public class Puente extends VistaPrincipal {
 		this.panelPedido.getBtnAccederAltaPedido().addActionListener(listenerAccederAltaPedido);
 		this.panelPedido.getBtnConsultarPedidos().addActionListener(listenerAccederPedido);
 		this.panelPedido.getBotonPedido().addActionListener(listenerMainPedido);
+		this.mntmBuscarPedido.addActionListener(listenerAccederPedido);
+		this.mntmNuevoPedido.addActionListener(listenerAccederAltaPedido);
 		
 	}
 

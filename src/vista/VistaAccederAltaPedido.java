@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 
@@ -19,6 +20,7 @@ public class VistaAccederAltaPedido extends JPanel {
 	public VistaAccederAltaPedido() {
 		vistaEjecutarAltaPedido = new VistaEjecutarAltaPedido();
 		btnAccederAltaPedido = new JButton("");
+		//ImageIcon imageIcon= new ImageIcon(new File(pathname))
 		btnAccederAltaPedido.setIcon(new ImageIcon(VistaAccederAltaPedido.class
 				.getResource("/com/sun/javafx/webkit/prism/resources/mediaVolumeThumb.png")));
 		btnAccederAltaPedido.addActionListener(new ActionListener() {

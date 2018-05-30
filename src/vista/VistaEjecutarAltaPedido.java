@@ -30,10 +30,10 @@ public class VistaEjecutarAltaPedido extends JPanel {
 		JPanel panel = new JPanel();
 		add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_panel.columnWidths = new int[]{0, 0, 25, 0, 0, 0, 0, 0};
+		gbl_panel.rowHeights = new int[]{30, 0, 0, 0, 0, 0, 0, 0};
 		gbl_panel.columnWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
 		JLabel lblCliente = new JLabel("N\u00FAmero identificaci\u00F3n:");
@@ -107,21 +107,21 @@ public class VistaEjecutarAltaPedido extends JPanel {
 		JLabel lblPrecio = new JLabel("Precio");
 		GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
 		gbc_lblPrecio.anchor = GridBagConstraints.EAST;
-		gbc_lblPrecio.insets = new Insets(0, 0, 5, 5);
+		gbc_lblPrecio.insets = new Insets(0, 0, 0, 5);
 		gbc_lblPrecio.gridx = 1;
 		gbc_lblPrecio.gridy = 6;
 		panel.add(lblPrecio, gbc_lblPrecio);
 		
 		JLabel precioTotal = new JLabel("100$");
 		GridBagConstraints gbc_precioTotal = new GridBagConstraints();
-		gbc_precioTotal.insets = new Insets(0, 0, 5, 5);
+		gbc_precioTotal.insets = new Insets(0, 0, 0, 5);
 		gbc_precioTotal.gridx = 2;
 		gbc_precioTotal.gridy = 6;
 		panel.add(precioTotal, gbc_precioTotal);
 		
 		btnConfirmarPedido = new JButton("Confirmar");
 		GridBagConstraints gbc_btnConfirmarPedido = new GridBagConstraints();
-		gbc_btnConfirmarPedido.insets = new Insets(0, 0, 5, 5);
+		gbc_btnConfirmarPedido.insets = new Insets(0, 0, 0, 5);
 		gbc_btnConfirmarPedido.gridx = 3;
 		gbc_btnConfirmarPedido.gridy = 6;
 		panel.add(btnConfirmarPedido, gbc_btnConfirmarPedido);
