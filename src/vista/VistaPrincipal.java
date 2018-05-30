@@ -29,6 +29,8 @@ public class VistaPrincipal extends JFrame {
 	
 
 	protected JMenuItem mntmBuscarArticulo;
+	protected JMenuItem mntmNuevoPedido;
+	protected JMenuItem mntmBuscarPedido;
 
 	public VistaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,10 +60,10 @@ public class VistaPrincipal extends JFrame {
 		JMenu mnPedidos = new JMenu("Pedidos");
 		menuBar.add(mnPedidos);
 
-		JMenuItem mntmNuevoPedido = new JMenuItem("Nuevo Pedido");
+		mntmNuevoPedido = new JMenuItem("Nuevo Pedido");
 		mnPedidos.add(mntmNuevoPedido);
 
-		JMenuItem mntmBuscarPedido = new JMenuItem("Buscar Pedido");
+		mntmBuscarPedido = new JMenuItem("Buscar Pedido");
 		mnPedidos.add(mntmBuscarPedido);
 
 		contentPane = new JPanel();
