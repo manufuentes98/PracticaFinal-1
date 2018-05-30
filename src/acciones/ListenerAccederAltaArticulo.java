@@ -1,8 +1,14 @@
 package acciones;
 
 import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.SwingUtilities;
+
 import control.Puente;
 
 public class ListenerAccederAltaArticulo implements ActionListener {
@@ -16,10 +22,9 @@ public class ListenerAccederAltaArticulo implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		puente.getContentPane().removeAll();
-		puente.getContentPane().setLayout(new BorderLayout(0, 0));
 		puente.getContentPane().add(puente.getVistaEjecutarAltaArticulo());
-		puente.repaint();
-		puente.revalidate();
+		
+		SwingUtilities.updateComponentTreeUI(puente);
 
 	}
 

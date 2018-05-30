@@ -22,19 +22,15 @@ public class VistaPrincipal extends JFrame {
 	protected PanelCliente panelCliente = new PanelCliente();
 	protected PanelPedido panelPedido = new PanelPedido();
 	protected JMenuItem mntmDarDeAlta;
-	public JButton getBotonPedido() {
-		return panelPedido.getBotonPedido();
-	}
-
-	
-
 	protected JMenuItem mntmBuscarArticulo;
+	protected JMenuItem mntmDarAltaCliente;
+	protected JMenuItem mntmBuscarCliente;
 	protected JMenuItem mntmNuevoPedido;
 	protected JMenuItem mntmBuscarPedido;
 
 	public VistaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 670, 413);
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -50,11 +46,11 @@ public class VistaPrincipal extends JFrame {
 
 		JMenu mnClientes = new JMenu("Clientes");
 		menuBar.add(mnClientes);
-
-		JMenuItem mntmDarAltaCliente = new JMenuItem("Nuevo Cliente");
+		
+		mntmDarAltaCliente = new JMenuItem("Nuevo Cliente");
 		mnClientes.add(mntmDarAltaCliente);
 
-		JMenuItem mntmBuscarCliente = new JMenuItem("Buscar Cliente");
+		mntmBuscarCliente = new JMenuItem("Buscar Cliente");
 		mnClientes.add(mntmBuscarCliente);
 
 		JMenu mnPedidos = new JMenu("Pedidos");
@@ -69,12 +65,16 @@ public class VistaPrincipal extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(0, 3, 0, 0));
+		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
 
 		contentPane.add(panelArticulo);
 		contentPane.add(panelCliente);
 		contentPane.add(panelPedido);
 
+	}
+
+	public JButton getBotonPedido() {
+		return panelPedido.getBotonPedido();
 	}
 
 	public JButton getBotonArticulo() {
@@ -97,10 +97,10 @@ public class VistaPrincipal extends JFrame {
 		return panelArticulo.getVistaAccederBuscarArticulo();
 	}
 
-
 	public PanelCliente getPanelCliente() {
 		return panelCliente;
 	}
+
 	public VistaAccederAltaCliente getVistaAccederAltaCliente() {
 		return panelCliente.getVistaAccederAltaCliente();
 	}
@@ -108,6 +108,7 @@ public class VistaPrincipal extends JFrame {
 	public VistaAccederBuscarCliente getVistaAccederBuscarCliente() {
 		return panelCliente.getVistaAccederBuscarCliente();
 	}
+
 	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
 		return panelCliente.getVistaAccederBorrarCliente();
 	}

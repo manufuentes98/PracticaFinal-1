@@ -1,5 +1,6 @@
 package acciones;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,10 +18,11 @@ public class RegistrarCliente implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		puente.remove(puente.getPanelCliente());
-		puente.getPanelCliente().remove(puente.getPanelCliente());
-		puente.add(puente.getVistaAccederAltaCliente());
-		puente.add(puente.getVistaAccederBuscarCliente());
+		puente.getPanelCliente().remove(puente.getPanelCliente().getLblClientes());
+		puente.getPanelCliente().remove(puente.getPanelCliente().getPanel());
+		puente.getPanelCliente().setLayout(new GridLayout(2, 1, 0, 0));
+		puente.getPanelCliente().add(puente.getVistaAccederAltaCliente());
+		puente.getPanelCliente().add(puente.getVistaAccederBuscarCliente());
 		puente.repaint();
 		puente.revalidate();
 	}

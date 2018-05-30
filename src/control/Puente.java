@@ -73,6 +73,10 @@ public class Puente extends VistaPrincipal {
 		this.panelCliente.getBtnBorrarCliente()
 		.addActionListener(listenerAccederBorrarCliente);
 		this.panelCliente.getBtnBuscarCliente().addActionListener(listenerAccederBuscarCliente);
+		this.mntmBuscarCliente.addActionListener(listenerAccederBuscarCliente);
+		this.mntmDarAltaCliente.addActionListener(listenerAccederAltaCliente);
+		
+		this.panelCliente.getBtnBuscarCliente().addActionListener(listenerAccederBuscarCliente);
 		this.panelPedido.getBotonPedido().addActionListener(registrarPedido);
 		this.panelPedido.getBtnAccederAltaPedido().addActionListener(listenerAccederAltaPedido);
 		this.panelPedido.getBtnConsultarPedidos().addActionListener(listenerAccederPedido);
