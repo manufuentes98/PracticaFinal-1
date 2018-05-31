@@ -1,15 +1,20 @@
 package control;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.ArrayList;
 import java.util.Vector;
 
 import modelo.Articulo;
 import modelo.Cliente;
+import modelo.Datos;
 import modelo.Pedido;
 
 public class Logica {
 
                           
-  public Boolean darAltaArticulo(Articulo articulo) {
+  private Datos datos;
+
+public Boolean darAltaArticulo(Articulo articulo) {
 	  
 	  return null;
   }
@@ -22,8 +27,9 @@ public class Logica {
   return null;
   }
 
-  public Boolean darAltaCliente() {
-  return null;
+  public Boolean darAltaCliente(Cliente cliente) {
+	  assertTrue(new Validador().validarCliente());
+	  return datos.grabarCliente(cliente);
   }
 
   public Cliente buscarCliente() {
