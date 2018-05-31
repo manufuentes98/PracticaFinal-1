@@ -2,22 +2,40 @@ package control;
 
 public class Validador {
 
-  public Validador validador ;
+	public boolean validarCliente() {
+		return false;
+	}
 
-  public Boolean validarCliente() {
-  return null;
-  }
+	public boolean validarArticulo(String nombre, String descripcion, String precio) {
+		comprobarVacio(nombre, descripcion, precio);
+		comprobarNumeros(precio);
+		return true;
+	}
 
-  public Boolean validarArticulo() {
-  return null;
-  }
+	public boolean validarPedido() {
+		return false;
+	}
 
-  public Boolean validarPedido() {
-  return null;
-  }
+	public boolean validarLineaPedido() {
+		return false;
+	}
 
-  public Boolean validarLineaPedido() {
-  return null;
-  }
+	public boolean comprobarVacio(String nombre, String descripcion, String precio) {
+		if (nombre.isEmpty() || descripcion.isEmpty() || precio.isEmpty()) {
+			return true;
+		}
+		return false;
+	}
 
+	public boolean comprobarNumeros(String precio) {
+		char caracter;
+		for (int i = 0; i < precio.length(); i++) {
+			caracter = precio.charAt(i);
+
+			if (!Character.isDigit(caracter)) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

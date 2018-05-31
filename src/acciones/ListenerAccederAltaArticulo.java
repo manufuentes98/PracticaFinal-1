@@ -23,7 +23,6 @@ public class ListenerAccederAltaArticulo implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		puente.getContentPane().removeAll();
 		puente.getContentPane().add(puente.getVistaEjecutarAltaArticulo());
-		
 		SwingUtilities.updateComponentTreeUI(puente);
 
 	}
