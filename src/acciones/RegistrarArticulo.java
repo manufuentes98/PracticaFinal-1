@@ -18,8 +18,8 @@ public class RegistrarArticulo implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		VistaEjecutarAltaArticulo vista = puente.getVistaEjecutarAltaArticulo();
 
-		assert puente.getValidador().validarArticulo(vista.getTextNombreAltaArticulo().getText(),
-				vista.getTextDescripcionAltaArticulo().getText(), vista.getTextPrecio().getText());
+		assert !puente.getValidador().validarArticulo(vista.getTextNombreAltaArticulo().getText(),
+				vista.getTextDescripcionAltaArticulo().getText(), vista.getTextPrecio().getText()) : "Error en algun campo";
 
 		Articulo a = new Articulo(1, vista.getTextNombreAltaArticulo().getText(),
 				vista.getTextDescripcionAltaArticulo().getText(), Float.valueOf(vista.getTextPrecio().getText()));
