@@ -32,6 +32,7 @@ public class Puente extends VistaPrincipal {
 	private RegistrarPedido registrarPedido;
 	private RegistrarArticulo registarArticulo;
 	private Logica logica;
+	private Validador validador;
 	private ListenerMainArticulo listenerMainArticulo;
 	private ListenerAccederAltaArticulo listenerAccederAltaArticulo;
 	private ListenerAccederBuscarArticulo listenerAccederBuscarArticulo;
@@ -42,7 +43,7 @@ public class Puente extends VistaPrincipal {
 	private ListenerAccederPedido listenerAccederPedido;
 	private ListenerMainPedido listenerMainPedido;
 
-	public void asignarListener() {
+	public void inicializarListeners() {
 		listenerMainArticulo = new ListenerMainArticulo(this);
 		listenerAccederAltaArticulo = new ListenerAccederAltaArticulo(this);
 		listenerAccederBuscarArticulo = new ListenerAccederBuscarArticulo(this);
@@ -50,32 +51,36 @@ public class Puente extends VistaPrincipal {
 		listenerAccederBuscarCliente = new ListenerAccederBuscarCliente(this);
 		listenerAccederBorrarCliente = new ListenerAccederBorrarCliente(this);
 		registrarCliente = new RegistrarCliente(this);
-		listenerAccederAltaPedido= new ListenerAccederAltaPedido(this);
-		listenerAccederPedido= new ListenerAccederPedido(this);
+		listenerAccederAltaPedido = new ListenerAccederAltaPedido(this);
+		listenerAccederPedido = new ListenerAccederPedido(this);
 		registrarPedido = new RegistrarPedido(this);
-		listenerMainPedido= new ListenerMainPedido(this);
+		listenerMainPedido = new ListenerMainPedido(this);
+		registarArticulo = new RegistrarArticulo(this);
 	}
 
 	public Puente() {
 		super();
-		asignarListener();
-		this.panelArticulo.getBotonArticulo().addActionListener(listenerMainArticulo);
-		this.panelArticulo.getBotonAltaArticulo()
-				.addActionListener(listenerAccederAltaArticulo);
-		this.panelArticulo.getBotonBuscarArticulo()
-				.addActionListener(listenerAccederBuscarArticulo);
+		inicializarListeners();
+		validador = new Validador();
+		asignarListeners();
+
+	}
+
+	private void asignarListeners() {
+		this.getBotonArticulo().addActionListener(listenerMainArticulo);
+		this.panelArticulo.getBotonAltaArticulo().addActionListener(listenerAccederAltaArticulo);
+		this.panelArticulo.getBotonBuscarArticulo().addActionListener(listenerAccederBuscarArticulo);
 		this.mntmDarDeAlta.addActionListener(listenerAccederAltaArticulo);
 		this.mntmBuscarArticulo.addActionListener(listenerAccederBuscarArticulo);
+		this.getVistaEjecutarAltaArticulo().getBtnGuardar().addActionListener(registarArticulo);
 
 		this.panelCliente.getBotonCliente().addActionListener(registrarCliente);
-		this.panelCliente.getBtnAltaCliente()
-				.addActionListener(listenerAccederAltaCliente);
-		this.panelCliente.getBtnBorrarCliente()
-		.addActionListener(listenerAccederBorrarCliente);
+		this.panelCliente.getBtnAltaCliente().addActionListener(listenerAccederAltaCliente);
+		this.panelCliente.getBtnBorrarCliente().addActionListener(listenerAccederBorrarCliente);
 		this.panelCliente.getBtnBuscarCliente().addActionListener(listenerAccederBuscarCliente);
 		this.mntmBuscarCliente.addActionListener(listenerAccederBuscarCliente);
 		this.mntmDarAltaCliente.addActionListener(listenerAccederAltaCliente);
-		
+
 		this.panelCliente.getBtnBuscarCliente().addActionListener(listenerAccederBuscarCliente);
 		this.panelPedido.getBotonPedido().addActionListener(registrarPedido);
 		this.panelPedido.getBtnAccederAltaPedido().addActionListener(listenerAccederAltaPedido);
@@ -83,7 +88,11 @@ public class Puente extends VistaPrincipal {
 		this.panelPedido.getBotonPedido().addActionListener(listenerMainPedido);
 		this.mntmBuscarPedido.addActionListener(listenerAccederPedido);
 		this.mntmNuevoPedido.addActionListener(listenerAccederAltaPedido);
-		
+
+	}
+
+	public Validador getValidador() {
+		return validador;
 	}
 
 }

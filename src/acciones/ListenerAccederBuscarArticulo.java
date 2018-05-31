@@ -18,7 +18,7 @@ public class ListenerAccederBuscarArticulo implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		puente.getContentPane().removeAll();
 		puente.getContentPane().setLayout(new BorderLayout(0, 0));
-		puente.getContentPane().add(puente.getVistaAccederBuscarArticulo().getVistaEjecutarBuscarArticulo());
+		puente.getContentPane().add(puente.getVistaEjecutarBuscarArticulo());
 		puente.repaint();
 		puente.revalidate();
 
