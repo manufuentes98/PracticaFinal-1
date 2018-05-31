@@ -1,16 +1,17 @@
 package test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import modelo.AlmacenIndice;
 import modelo.AlmacenRutas;
 import modelo.Articulo;
-import modelo.Cliente;
 
 public class AlmacenRutasTest {
 
@@ -20,15 +21,15 @@ public class AlmacenRutasTest {
 	private Articulo articuloDos;
 	private Articulo articuloTres;
 		
-	@Before
+	@BeforeEach
 	public void setUp() {
 		instancia = new AlmacenRutas<>("Elementos");
-		articuloUno = new Articulo(0, "Paco", "sa matao", 123);
-		articuloDos = new Articulo(1, "Pepe", "sa matao pero menos", 321);
-		articuloTres = new Articulo(2, "Pepito", "sa matao del to", 213);
+		articuloUno = new Articulo(0, "Paco", "asdda", 123);
+		articuloDos = new Articulo(1, "Pepe", "asdasda", 321);
+		articuloTres = new Articulo(2, "Pepito", "asdas", 213);
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 		File carpetaGenerada = new File("./data/Elementos");
 		borrarCarpeta(carpetaGenerada);
