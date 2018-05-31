@@ -7,9 +7,9 @@ public class Validador {
 	}
 
 	public boolean validarArticulo(String nombre, String descripcion, String precio) {
-		comprobarVacio(nombre, descripcion, precio);
-		comprobarNumeros(precio);
-		return true;
+		if (!comprobarVacio(nombre, descripcion, precio)||!comprobarNumeros(precio)) {
+			return false;
+		}else return true;
 	}
 
 	public boolean validarPedido() {
