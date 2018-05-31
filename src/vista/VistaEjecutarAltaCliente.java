@@ -1,4 +1,5 @@
 package vista;
+
 import javax.swing.JPanel;
 
 import java.awt.GridBagLayout;
@@ -17,15 +18,42 @@ import java.awt.Insets;
 import java.awt.Color;
 import javax.swing.border.MatteBorder;
 
-public class VistaEjecutarAltaCliente extends JPanel{
+public class VistaEjecutarAltaCliente extends JPanel {
+
+	public JTextField getTxtDireccion() {
+		return txtDireccion;
+	}
+
+	public JTextField getTxtTelefono() {
+		return txtTelefono;
+	}
+
+	public JLabel getLblComprobacion() {
+		return lblComprobacion;
+	}
+
+	public JTextField getTxtDNI() {
+		return txtDNI;
+	}
+
+	public JTextField getTxtNombre() {
+		return txtNombre;
+	}
+
+	private JTextField txtDireccion;
+	private JTextField txtTelefono;
+	private JLabel lblComprobacion;
+	private JTextField txtDNI;
+	private JTextField txtNombre;
+	private JButton btnValidar;
 
 	public VistaEjecutarAltaCliente() {
-	
+
 		lblComprobacion = new JLabel("Mensaje:");
 		lblComprobacion.setHorizontalAlignment(SwingConstants.LEFT);
 		lblComprobacion.setFont(new Font("Sylfaen", Font.PLAIN, 17));
 		lblComprobacion.setVisible(false);
-		
+
 		JLabel lblDarAltaCliente = new JLabel("Dar Alta Cliente");
 		lblDarAltaCliente.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		lblDarAltaCliente.setHorizontalAlignment(SwingConstants.CENTER);
@@ -33,16 +61,18 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		setLayout(new BorderLayout(0, 0));
 		add(lblComprobacion, BorderLayout.SOUTH);
 		add(lblDarAltaCliente, BorderLayout.NORTH);
-		
+
 		JPanel panel = new JPanel();
 		add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panel.columnWeights = new double[]{0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		gbl_panel.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		gbl_panel.columnWeights = new double[] { 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+				Double.MIN_VALUE };
+		gbl_panel.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+				Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
-		
+
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblNombre.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -52,7 +82,7 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		gbc_lblNombre.gridx = 1;
 		gbc_lblNombre.gridy = 2;
 		panel.add(lblNombre, gbc_lblNombre);
-		
+
 		txtNombre = new JTextField();
 		GridBagConstraints gbc_txtNombre = new GridBagConstraints();
 		gbc_txtNombre.gridwidth = 4;
@@ -62,7 +92,7 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		gbc_txtNombre.gridy = 2;
 		panel.add(txtNombre, gbc_txtNombre);
 		txtNombre.setColumns(10);
-		
+
 		JLabel lblDnicif = new JLabel("DNI/CIF");
 		lblDnicif.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblDnicif.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -72,16 +102,16 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		gbc_lblDnicif.gridx = 1;
 		gbc_lblDnicif.gridy = 4;
 		panel.add(lblDnicif, gbc_lblDnicif);
-		
-		textField = new JTextField();
-		textField.setColumns(10);
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridx = 2;
-		gbc_textField.gridy = 4;
-		panel.add(textField, gbc_textField);
-		
+
+		txtDNI = new JTextField();
+		txtDNI.setColumns(10);
+		GridBagConstraints gbc_textFieldDNI = new GridBagConstraints();
+		gbc_textFieldDNI.insets = new Insets(0, 0, 5, 5);
+		gbc_textFieldDNI.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textFieldDNI.gridx = 2;
+		gbc_textFieldDNI.gridy = 4;
+		panel.add(txtDNI, gbc_textFieldDNI);
+
 		JLabel lblDireccion = new JLabel("Direcci\u00F3n");
 		lblDireccion.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		GridBagConstraints gbc_lblDireccion = new GridBagConstraints();
@@ -89,7 +119,7 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		gbc_lblDireccion.gridx = 1;
 		gbc_lblDireccion.gridy = 6;
 		panel.add(lblDireccion, gbc_lblDireccion);
-		
+
 		txtDireccion = new JTextField();
 		GridBagConstraints gbc_txtDireccion = new GridBagConstraints();
 		gbc_txtDireccion.gridwidth = 4;
@@ -99,7 +129,7 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		gbc_txtDireccion.gridy = 6;
 		panel.add(txtDireccion, gbc_txtDireccion);
 		txtDireccion.setColumns(10);
-		
+
 		JLabel lblTelfono = new JLabel("Tel\u00E9fono");
 		lblTelfono.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		GridBagConstraints gbc_lblTelfono = new GridBagConstraints();
@@ -108,7 +138,7 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		gbc_lblTelfono.gridx = 1;
 		gbc_lblTelfono.gridy = 8;
 		panel.add(lblTelfono, gbc_lblTelfono);
-		
+
 		txtTelefono = new JTextField();
 		GridBagConstraints gbc_txtTelefono = new GridBagConstraints();
 		gbc_txtTelefono.insets = new Insets(0, 0, 5, 5);
@@ -117,8 +147,8 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		gbc_txtTelefono.gridy = 8;
 		panel.add(txtTelefono, gbc_txtTelefono);
 		txtTelefono.setColumns(10);
-		
-		JButton btnValidar = new JButton("Validar");
+
+		btnValidar = new JButton("Guardar");
 		btnValidar.setIconTextGap(5);
 		btnValidar.setBorder(new MatteBorder(1, 1, 1, 1, (Color) Color.RED));
 		btnValidar.setFont(new Font("Times New Roman", Font.PLAIN, 14));
@@ -131,10 +161,8 @@ public class VistaEjecutarAltaCliente extends JPanel{
 		panel.add(btnValidar, gbc_btnValidar);
 	}
 
-  public JPanel VistaEjecutarAltaCliente;
-  private JTextField txtNombre;
-  private JTextField txtDireccion;
-  private JTextField txtTelefono;
-  private JLabel lblComprobacion;
-  private JTextField textField;
+	public JButton getBtnValidar() {
+		return btnValidar;
+	}
+
 }
