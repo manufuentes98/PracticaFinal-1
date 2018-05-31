@@ -9,8 +9,9 @@ import modelo.Pedido;
 public class Logica {
 
                           
-  public Boolean darAltaArticulo() {
-  return null;
+  public Boolean darAltaArticulo(Articulo articulo) {
+	  
+	  return null;
   }
 
   public Articulo buscarArticulo() {

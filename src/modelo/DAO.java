@@ -26,6 +26,7 @@ public class DAO<T, K>  {
 	
 	public DAO() {
 		super();
+		this.indice = new TreeMap<>();
 	}
 
 	class MyObjectOutputStream extends ObjectOutputStream {
@@ -105,6 +106,8 @@ public class DAO<T, K>  {
 	
 	public boolean grabar(T t, K k) {
 		assert k != null && t != null;
+		this.pathIndice = String.valueOf(t.getClass().getName());
+		this.pathDatos = String.valueOf(k);
 		boolean retorno = false;
 		// miro el ultimo indice. siempre hay un mapa aqui
 		Entry<K, Integer> lastEntry = indice.lastEntry();
@@ -124,25 +127,24 @@ public class DAO<T, K>  {
 		}
 		return retorno;
 	}
-	public boolean grabar(T t,String claveElemento,String claveGrupo) {
+	public boolean grabar(T t,String claveGrupo,String claveElemento) {
 		boolean retorno=false;
-		pathComun  = new String(pathComun+"/"+claveGrupo);
-		String ruta=pathComun.toString();
-		pathComun= new String(pathComun+"/"+claveElemento+".data");
-		if(!new File(ruta).exists()){
-			new File(ruta).mkdirs();
+		pathComun = new String("data/"+claveGrupo);
+		if(!new File(pathComun).exists()){
+			new File(pathComun).mkdirs();
 		}
-			retorno=new DAO<>().grabar(pathComun.toString(), t);
+		pathComun= new String(pathComun+"/"+claveElemento+".data");
+		retorno=grabar(pathComun, t);
 		System.out.println(pathComun.toString());
-		pathComun = new String("./data/"+directorio);
 		return retorno;
 	}
+	
 	public T leer(K k) {
 		assert k != null;
 		indice = (TreeMap<K, Integer>) new DAO().leer(pathIndice);
 		if (indice == null) {
 			indice = new TreeMap<>();
-			new DAO<>().grabar(pathIndice, indice);
+			grabar(pathIndice, indice);
 		}
 		T retorno = null;
 		Integer posicion = indice.get(k);
@@ -158,15 +160,12 @@ public class DAO<T, K>  {
 	
 	public Object leer(String claveElemento,String claveGrupo) {
 		Object t;
-		pathComun  = new String(pathComun+"/"+claveGrupo);
-		String ruta=pathComun.toString();
+		pathComun = new String("data/"+claveGrupo);
 		pathComun= new String(pathComun+"/"+claveElemento+".data");
-		if(!new File(ruta).exists()){
+		if(!new File(pathComun).exists()){
 			return null;
 		}
-			t=new DAO<>().leer(pathComun.toString());
-		System.out.println(pathComun.toString());
-		pathComun = new String("data/"+directorio);
+		t=leer(String.valueOf(pathComun));
 		return t;
 	};
 	
@@ -181,11 +180,11 @@ public class DAO<T, K>  {
 					obj = adaptadorR.readObject();
 				}
 				obj = adaptadorR.readObject();
+				cerrar(flujoR);
 			}
 		} catch (IOException | ClassNotFoundException e) {
 			System.out.println("fin de lectura");
 		}
-		cerrar(flujoR);
 		return obj;
 	}
 }
