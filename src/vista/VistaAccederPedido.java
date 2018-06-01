@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 
 public class VistaAccederPedido extends JPanel {
 	private JButton btnConsultarPedidos;
-	private VistaEjecutarPedido vistaEjecutarPedido;
+	private VistaEjecutarBuscarPedido vistaEjecutarBuscarPedido;
 	
 
 	public VistaAccederPedido() {
-		vistaEjecutarPedido= new VistaEjecutarPedido();
+		vistaEjecutarBuscarPedido= new VistaEjecutarBuscarPedido();
 		 btnConsultarPedidos = new JButton("\r\n");
 		btnConsultarPedidos.setIcon(new ImageIcon(VistaAccederPedido.class.getResource("/com/sun/javafx/webkit/prism/resources/panIcon.png")));
 		btnConsultarPedidos.addActionListener(new ActionListener() {
@@ -32,12 +32,12 @@ public class VistaAccederPedido extends JPanel {
 		add(lblNewLabel, BorderLayout.SOUTH);
 	}
 
-  public VistaEjecutarPedido getVistaEjecutarPedido() {
-		return vistaEjecutarPedido;
+  public VistaEjecutarBuscarPedido getVistaEjecutarBuscarPedido() {
+		return vistaEjecutarBuscarPedido;
 	}
 
-	public void setVistaEjecutarPedido(VistaEjecutarPedido vistaEjecutarPedido) {
-		this.vistaEjecutarPedido = vistaEjecutarPedido;
+	public void setVistaEjecutarPedido(VistaEjecutarBuscarPedido vistaEjecutarPedido) {
+		this.vistaEjecutarBuscarPedido = vistaEjecutarPedido;
 	}
 
 public JButton getBtnConsultarPedidos() {
