@@ -3,7 +3,9 @@ package control;
 import java.util.regex.Pattern;
 
 public class Validador {
-
+public Validador() {
+		super();
+	}
 	public boolean validarArticulo(String nombre, String descripcion, String precio) {
 		if (!comprobarVacioArticulo(nombre, descripcion, precio) || !comprobarNumeros(precio)) {
 			return false;
