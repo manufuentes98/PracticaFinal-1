@@ -2,8 +2,14 @@ package control;
 
 public class Validador {
 
+	
+	
+	public Validador() {
+		super();
+	}
+
 	public boolean validarCliente() {
-		return false;
+		return true;
 	}
 
 	public boolean validarArticulo(String nombre, String descripcion, String precio) {

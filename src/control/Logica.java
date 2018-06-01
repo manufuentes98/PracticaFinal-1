@@ -9,10 +9,16 @@ import modelo.Cliente;
 import modelo.Datos;
 import modelo.Pedido;
 
-public class Logica {
 
+public class Logica {
+	private Datos datos;
                           
-  private Datos datos;
+  public Logica() {
+		super();
+		this.datos = new Datos();
+	}
+
+
 
 public Boolean darAltaArticulo(Articulo articulo) {
 	  
