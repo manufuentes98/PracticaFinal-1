@@ -1,29 +1,32 @@
 package acciones;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JPanel;
-
-import control.Logica;
 import control.Puente;
+import modelo.Cliente;
+import vista.VistaEjecutarAltaCliente;
 
-public class RegistrarCliente implements ActionListener{
+public class RegistrarCliente implements ActionListener {
 	private Puente puente;
-	
+
 	public RegistrarCliente(Puente puente) {
 		super();
 		this.puente = puente;
 	}
 
+	@Override
 	public void actionPerformed(ActionEvent e) {
-		puente.getPanelCliente().remove(puente.getPanelCliente().getLblClientes());
-		puente.getPanelCliente().remove(puente.getPanelCliente().getPanel());
-		puente.getPanelCliente().setLayout(new GridLayout(2, 1, 0, 0));
-		puente.getPanelCliente().add(puente.getVistaAccederAltaCliente());
-		puente.getPanelCliente().add(puente.getVistaAccederBuscarCliente());
-		puente.repaint();
-		puente.revalidate();
+		VistaEjecutarAltaCliente vista = puente.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente();
+
+		assert !puente.getValidador().validarCliente(vista.getTxtDNI().getText(), vista.getTxtNombre().getText(),
+				vista.getTxtDireccion().getText(), vista.getTxtTelefono().getText()) : "Error en algun campo";
+
+		Cliente c = new Cliente(vista.getTxtDNI().getText(), vista.getTxtNombre().getText(),
+				vista.getTxtDireccion().getText(), vista.getTxtTelefono().getText());
+		vista.getLblComprobacion().setText("cliente creado");
+		// else {
+		// vista.getLblComprobacion().setText("error al crear");
+		System.out.println(c);
+
 	}
 }

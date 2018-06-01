@@ -8,9 +8,9 @@ import modelo.Cliente;
 import vista.VistaEjecutarAltaArticulo;
 import vista.VistaEjecutarAltaCliente;
 
-public class GuardarCliente implements ActionListener{
+public class GuardarCliente implements ActionListener {
 	private Puente puente;
-	
+
 	public GuardarCliente(Puente puente) {
 		super();
 		this.puente = puente;
@@ -29,6 +29,6 @@ public class GuardarCliente implements ActionListener{
 		// else {
 		// vista.getLblComprobacion().setText("error al crear");
 		System.out.println(c);
-		
+
 	}
 }
