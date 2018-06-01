@@ -1,21 +1,23 @@
 package control;
 
-public class Validador {
+import java.util.regex.Pattern;
 
-	
-	
-	public Validador() {
+public class Validador {
+public Validador() {
 		super();
 	}
-
-	public boolean validarCliente() {
-		return true;
+	public boolean validarArticulo(String nombre, String descripcion, String precio) {
+		if (!comprobarVacioArticulo(nombre, descripcion, precio) || !comprobarNumeros(precio)) {
+			return false;
+		} else
+			return true;
 	}
 
-	public boolean validarArticulo(String nombre, String descripcion, String precio) {
-		if (!comprobarVacio(nombre, descripcion, precio)||!comprobarNumeros(precio)) {
+	public boolean validarCliente(String dni, String nombre, String direccion, String telefono) {
+		if (!comprobarVacioCliente(dni, nombre, direccion, telefono)) {
 			return false;
-		}else return true;
+		} else
+			return true;
 	}
 
 	public boolean validarPedido() {
@@ -26,11 +28,18 @@ public class Validador {
 		return false;
 	}
 
-	public boolean comprobarVacio(String nombre, String descripcion, String precio) {
+	public boolean comprobarVacioArticulo(String nombre, String descripcion, String precio) {
 		if (nombre.isEmpty() || descripcion.isEmpty() || precio.isEmpty()) {
 			return true;
-		}
-		return false;
+		} else
+			return false;
+	}
+
+	public boolean comprobarVacioCliente(String dni, String nombre, String direccion, String telefono) {
+		if (dni.isEmpty() || nombre.isEmpty() || direccion.isEmpty() || telefono.isEmpty()) {
+			return true;
+		} else
+			return false;
 	}
 
 	public boolean comprobarNumeros(String precio) {
@@ -44,4 +53,14 @@ public class Validador {
 		}
 		return true;
 	}
+
+	public boolean comprobarTelefono(String telefono) {
+
+		return false;
+	}
+
+	public boolean comprobarDni(String dni) {
+		return false;
+	}
+
 }

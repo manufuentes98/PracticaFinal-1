@@ -6,6 +6,7 @@ import acciones.BorrarCliente;
 import acciones.BuscarArticulo;
 import acciones.BuscarCliente;
 import acciones.ConsultarPedido;
+import acciones.GuardarCliente;
 import acciones.ListenerAccederAltaArticulo;
 import acciones.ListenerAccederAltaCliente;
 import acciones.ListenerAccederAltaPedido;
@@ -42,6 +43,7 @@ public class Puente extends VistaPrincipal {
 	private ListenerAccederAltaPedido listenerAccederAltaPedido;
 	private ListenerAccederPedido listenerAccederPedido;
 	private ListenerMainPedido listenerMainPedido;
+	private GuardarCliente guardarCliente;
 
 	public void inicializarListeners() {
 		listenerMainArticulo = new ListenerMainArticulo(this);
@@ -56,6 +58,7 @@ public class Puente extends VistaPrincipal {
 		registrarPedido = new RegistrarPedido(this);
 		listenerMainPedido = new ListenerMainPedido(this);
 		registarArticulo = new RegistrarArticulo(this);
+		guardarCliente = new GuardarCliente(this);
 	}
 
 	public Puente() {
@@ -72,7 +75,7 @@ public class Puente extends VistaPrincipal {
 		this.panelArticulo.getBotonBuscarArticulo().addActionListener(listenerAccederBuscarArticulo);
 		this.mntmDarDeAlta.addActionListener(listenerAccederAltaArticulo);
 		this.mntmBuscarArticulo.addActionListener(listenerAccederBuscarArticulo);
-		this.getVistaEjecutarAltaArticulo().getBtnGuardar().addActionListener(registarArticulo);
+		this.getVistaEjecutarAltaArticulo().getBtnGuardar().addActionListener((registarArticulo));
 
 		this.panelCliente.getBotonCliente().addActionListener(registrarCliente);
 		this.panelCliente.getBtnAltaCliente().addActionListener(listenerAccederAltaCliente);
@@ -80,6 +83,7 @@ public class Puente extends VistaPrincipal {
 		this.panelCliente.getBtnBuscarCliente().addActionListener(listenerAccederBuscarCliente);
 		this.mntmBuscarCliente.addActionListener(listenerAccederBuscarCliente);
 		this.mntmDarAltaCliente.addActionListener(listenerAccederAltaCliente);
+		this.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente().getBtnValidar().addActionListener(guardarCliente);
 
 		this.panelCliente.getBtnBuscarCliente().addActionListener(listenerAccederBuscarCliente);
 		this.panelPedido.getBotonPedido().addActionListener(registrarPedido);
