@@ -8,7 +8,7 @@ public class Datos {
 	}
 
 	public boolean grabarCliente(Cliente cliente) {
-		return new DAO<>().grabar("clientes.data", cliente,true);
+		return new DAO<>().grabar("data/clientes.data", cliente,true);
 	}
 	
 }
