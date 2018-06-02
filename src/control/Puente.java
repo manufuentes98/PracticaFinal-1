@@ -2,6 +2,7 @@ package control;
 
 import javax.swing.JPanel;
 
+import acciones.AddLinea;
 import acciones.BorrarCliente;
 import acciones.BuscarArticulo;
 import acciones.BuscarCliente;
@@ -13,8 +14,9 @@ import acciones.ListenerAccederAltaPedido;
 import acciones.ListenerAccederBorrarCliente;
 import acciones.ListenerAccederBuscarArticulo;
 import acciones.ListenerAccederBuscarCliente;
-import acciones.ListenerAccederPedido;
+import acciones.ListenerAccederBuscarPedido;
 import acciones.ListenerMainArticulo;
+import acciones.ListenerMainCliente;
 import acciones.ListenerMainPedido;
 import acciones.ModificarArticulo;
 import acciones.RegistrarArticulo;
@@ -41,9 +43,11 @@ public class Puente extends VistaPrincipal {
 	private ListenerAccederBuscarCliente listenerAccederBuscarCliente;
 	private ListenerAccederBorrarCliente listenerAccederBorrarCliente;
 	private ListenerAccederAltaPedido listenerAccederAltaPedido;
-	private ListenerAccederPedido listenerAccederPedido;
+	private ListenerAccederBuscarPedido listenerAccederBuscarPedido;
 	private ListenerMainPedido listenerMainPedido;
+	private ListenerMainCliente listenerMainCliente;
 	private GuardarCliente guardarCliente;
+	private AddLinea addLinea;
 
 	public Puente() {
 		super();
@@ -66,15 +70,19 @@ public class Puente extends VistaPrincipal {
 		this.panelCliente.getBtnBuscarCliente().addActionListener(listenerAccederBuscarCliente);
 		this.mntmBuscarCliente.addActionListener(listenerAccederBuscarCliente);
 		this.mntmDarAltaCliente.addActionListener(listenerAccederAltaCliente);
-		this.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente().getBtnValidar().addActionListener(guardarCliente);
+		this.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente().getBtnValidar()
+				.addActionListener(guardarCliente);
+		this.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente().getBtnValidar()
+				.addActionListener(registrarCliente);
 
-		this.panelCliente.getBtnBuscarCliente().addActionListener(listenerAccederBuscarCliente);
-		this.panelPedido.getBotonPedido().addActionListener(registrarPedido);
-		this.panelPedido.getBtnAccederAltaPedido().addActionListener(listenerAccederAltaPedido);
-		this.panelPedido.getBtnConsultarPedidos().addActionListener(listenerAccederPedido);
 		this.panelPedido.getBotonPedido().addActionListener(listenerMainPedido);
-		this.mntmBuscarPedido.addActionListener(listenerAccederPedido);
+		this.panelPedido.getBtnAccederAltaPedido().addActionListener(listenerAccederAltaPedido);
+		this.panelPedido.getBtnConsultarPedidos().addActionListener(listenerAccederBuscarPedido);
+		this.mntmBuscarPedido.addActionListener(listenerAccederBuscarPedido);
 		this.mntmNuevoPedido.addActionListener(listenerAccederAltaPedido);
+		this.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido().getBtnConfirmarPedido()
+				.addActionListener(registrarPedido);
+		this.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido().getBtnAddLinea().addActionListener(addLinea);
 
 	}
 

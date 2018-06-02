@@ -11,7 +11,7 @@ import utiles.Utiles;
 import vista.VistaEjecutarAltaArticulo;
 import vista.VistaEjecutarAltaCliente;
 
-public class GuardarCliente implements ActionListener{
+public class GuardarCliente implements ActionListener {
 	private Puente puente;
 	private Validador validador;
 	
@@ -44,6 +44,5 @@ public class GuardarCliente implements ActionListener{
 		Utiles.actualizar(puente);
 		// else {
 		// vista.getLblComprobacion().setText("error al crear");
-		
 	}
 }
