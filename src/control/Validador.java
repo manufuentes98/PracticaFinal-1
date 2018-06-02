@@ -2,6 +2,8 @@ package control;
 
 import java.util.regex.Pattern;
 
+import modelo.Cliente;
+
 public class Validador {
 public Validador() {
 		super();
@@ -13,13 +15,12 @@ public Validador() {
 			return true;
 	}
 
-	public boolean validarCliente(String dni, String nombre, String direccion, String telefono) {
-		if (!comprobarVacioCliente(dni, nombre, direccion, telefono)) {
+	public boolean validarCliente(Cliente cliente) {
+		if (!comprobarVacioCliente(cliente)) {
 			return false;
 		} else
 			return true;
 	}
-
 	public boolean validarPedido() {
 		return false;
 	}
@@ -35,8 +36,9 @@ public Validador() {
 			return false;
 	}
 
-	public boolean comprobarVacioCliente(String dni, String nombre, String direccion, String telefono) {
-		if (dni.isEmpty() || nombre.isEmpty() || direccion.isEmpty() || telefono.isEmpty()) {
+	private boolean comprobarVacioCliente(Cliente cliente) {
+		if (!cliente.getDniCif().isEmpty() && !cliente.getRazonSocial().isEmpty() &&
+				!cliente.getDireccion().isEmpty() && !cliente.getTelefono().isEmpty()) {
 			return true;
 		} else
 			return false;

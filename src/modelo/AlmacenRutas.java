@@ -1,8 +1,5 @@
 package modelo;
 import java.io.File;
-import java.io.FileOutputStream;
-
-import modelo.DAO;
 
 public class AlmacenRutas<T> {
 
