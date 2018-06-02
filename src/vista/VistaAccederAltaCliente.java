@@ -10,15 +10,9 @@ import javax.swing.JButton;
 
 public class VistaAccederAltaCliente extends JPanel {
 
-	protected JButton btnAltaCliente;
-	protected VistaEjecutarAltaCliente VistaEjecutarAltaCliente=new VistaEjecutarAltaCliente();
-
-	
-	protected JButton button;
-
-	public JButton getButton() {
-		return button;
-	}
+	private JButton btnAltaCliente;
+	private VistaEjecutarAltaCliente VistaEjecutarAltaCliente=new VistaEjecutarAltaCliente();
+	private JButton button;
 
 	public VistaAccederAltaCliente() {
 		setLayout(new BorderLayout(0, 0));

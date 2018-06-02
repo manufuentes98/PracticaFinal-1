@@ -45,29 +45,13 @@ public class Puente extends VistaPrincipal {
 	private ListenerMainPedido listenerMainPedido;
 	private GuardarCliente guardarCliente;
 
-	public void inicializarListeners() {
-		listenerMainArticulo = new ListenerMainArticulo(this);
-		listenerAccederAltaArticulo = new ListenerAccederAltaArticulo(this);
-		listenerAccederBuscarArticulo = new ListenerAccederBuscarArticulo(this);
-		listenerAccederAltaCliente = new ListenerAccederAltaCliente(this);
-		listenerAccederBuscarCliente = new ListenerAccederBuscarCliente(this);
-		listenerAccederBorrarCliente = new ListenerAccederBorrarCliente(this);
-		registrarCliente = new RegistrarCliente(this);
-		listenerAccederAltaPedido = new ListenerAccederAltaPedido(this);
-		listenerAccederPedido = new ListenerAccederPedido(this);
-		registrarPedido = new RegistrarPedido(this);
-		listenerMainPedido = new ListenerMainPedido(this);
-		registarArticulo = new RegistrarArticulo(this);
-		guardarCliente = new GuardarCliente(this);
-	}
-
 	public Puente() {
 		super();
 		inicializarListeners();
-		validador = new Validador();
+		validador = new Validador(this);
 		asignarListeners();
-
-	}
+		this.logica = new Logica(this);
+		}
 
 	private void asignarListeners() {
 		this.getBotonArticulo().addActionListener(listenerMainArticulo);
@@ -76,7 +60,6 @@ public class Puente extends VistaPrincipal {
 		this.mntmDarDeAlta.addActionListener(listenerAccederAltaArticulo);
 		this.mntmBuscarArticulo.addActionListener(listenerAccederBuscarArticulo);
 		this.getVistaEjecutarAltaArticulo().getBtnGuardar().addActionListener((registarArticulo));
-
 		this.panelCliente.getBotonCliente().addActionListener(registrarCliente);
 		this.panelCliente.getBtnAltaCliente().addActionListener(listenerAccederAltaCliente);
 		this.panelCliente.getBtnBorrarCliente().addActionListener(listenerAccederBorrarCliente);
@@ -95,8 +78,19 @@ public class Puente extends VistaPrincipal {
 
 	}
 
-	public Validador getValidador() {
-		return validador;
+	private void inicializarListeners() {
+		listenerMainArticulo = new ListenerMainArticulo(this);
+		listenerAccederAltaArticulo = new ListenerAccederAltaArticulo(this);
+		listenerAccederBuscarArticulo = new ListenerAccederBuscarArticulo(this);
+		listenerAccederAltaCliente = new ListenerAccederAltaCliente(this);
+		listenerAccederBuscarCliente = new ListenerAccederBuscarCliente(this);
+		listenerAccederBorrarCliente = new ListenerAccederBorrarCliente(this);
+		registrarCliente = new RegistrarCliente(this);
+		listenerAccederAltaPedido = new ListenerAccederAltaPedido(this);
+		listenerAccederPedido = new ListenerAccederPedido(this);
+		registrarPedido = new RegistrarPedido(this);
+		listenerMainPedido = new ListenerMainPedido(this);
+		registarArticulo = new RegistrarArticulo(this,validador);
+		guardarCliente = new GuardarCliente(this,validador);
 	}
-
 }

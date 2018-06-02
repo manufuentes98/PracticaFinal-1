@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 
 import control.Logica;
 import control.Puente;
+import utiles.Utiles;
 
 public class RegistrarCliente implements ActionListener{
 	private Puente puente;
@@ -23,7 +24,6 @@ public class RegistrarCliente implements ActionListener{
 		puente.getPanelCliente().setLayout(new GridLayout(2, 1, 0, 0));
 		puente.getPanelCliente().add(puente.getVistaAccederAltaCliente());
 		puente.getPanelCliente().add(puente.getVistaAccederBuscarCliente());
-		puente.repaint();
-		puente.revalidate();
+		Utiles.actualizar(puente);
 	}
 }

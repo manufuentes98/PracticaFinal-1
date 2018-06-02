@@ -12,10 +12,12 @@ import modelo.Pedido;
 
 public class Logica {
 	private Datos datos;
+	Puente puente;
                           
-  public Logica() {
+  public Logica(Puente puente) {
 		super();
 		this.datos = new Datos();
+		this.puente = puente;
 	}
 
 
@@ -34,7 +36,7 @@ public Boolean darAltaArticulo(Articulo articulo) {
   }
 
   public Boolean darAltaCliente(Cliente cliente) {
-	  assertTrue(new Validador().validarCliente(cliente));
+	  assertTrue(new Validador(puente).validarCliente(cliente));
 	  return datos.grabarCliente(cliente);
   }
 
