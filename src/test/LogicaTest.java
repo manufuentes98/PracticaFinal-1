@@ -5,6 +5,7 @@ import java.io.File;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import control.Logica;
+import control.Puente;
 import modelo.Cliente;
 
 class LogicaTest {
@@ -29,7 +30,7 @@ class LogicaTest {
 	@Test
 	void testDarAltaCliente() {
 		Cliente cliente = new Cliente("123P", "razonsocial", "calle falsa123", "622556677");
-		assertTrue(new Logica().darAltaCliente(cliente));
+		assertTrue(new Logica(new Puente()).darAltaCliente(cliente));
 	}
 
 	void testBuscarCliente() {

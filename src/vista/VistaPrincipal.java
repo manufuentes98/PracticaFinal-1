@@ -73,6 +73,8 @@ public class VistaPrincipal extends JFrame {
 
 	}
 
+	
+	
 	public JButton getBotonPedido() {
 		return panelPedido.getBotonPedido();
 	}
