@@ -34,7 +34,7 @@ public Boolean darAltaArticulo(Articulo articulo) {
   }
 
   public Boolean darAltaCliente(Cliente cliente) {
-	  assertTrue(new Validador().validarCliente());
+	  assertTrue(new Validador().validarCliente(cliente));
 	  return datos.grabarCliente(cliente);
   }
 

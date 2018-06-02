@@ -13,8 +13,8 @@ import modelo.Articulo;
 import modelo.Cliente;
 
 public class AlmacenIndiceTest {
-	private static final String CLIENTES_DAT = "clientes.dat";
-	private static final String INDICE_DAT = "indice.dat";
+	private static final String CLIENTES_DAT = "./data/clientes.dat";
+	private static final String INDICE_DAT = "./data/indice.dat";
 	AlmacenIndice<Articulo, Integer> instancia;
 	private Articulo articuloUno;
 	private Articulo articuloDos;

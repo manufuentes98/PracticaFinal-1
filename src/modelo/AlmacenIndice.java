@@ -7,7 +7,7 @@ public class AlmacenIndice<T, K> {
 		private String pathIndice;
 		private String pathDatos;
 		private TreeMap<K, Integer> indice;
-		DAO<T,K> dao;
+		DAO<T> dao;
 
 		public AlmacenIndice(String pathIndice, String pathDatos) {
 			super();
