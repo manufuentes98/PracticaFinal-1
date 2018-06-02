@@ -31,7 +31,7 @@ public class AlmacenRutasTest {
 
 	@AfterEach
 	public void tearDown() throws Exception {
-		File carpetaGenerada = new File("./data/Elementos");
+		File carpetaGenerada = new File("./data");
 		borrarCarpeta(carpetaGenerada);
 	}
 

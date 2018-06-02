@@ -61,10 +61,16 @@ public class AlmacenIndiceTest {
 	}
 
 	@AfterEach
-	public void tearDown() {
-		File file = new File(INDICE_DAT);
-		file.delete();
-		file = new File(CLIENTES_DAT);
-		file.delete();
+	public void tearDown() throws Exception {
+		File carpetaGenerada = new File("./data");
+		borrarCarpeta(carpetaGenerada);
+	}
+	
+	private void borrarCarpeta(File carpetaGenerada) {
+	    if (carpetaGenerada.isDirectory()) { 
+	        for (File f : carpetaGenerada.listFiles()) { 
+	        	borrarCarpeta(f);  } 
+	    } 
+	    carpetaGenerada.delete(); 
 	}
 }
