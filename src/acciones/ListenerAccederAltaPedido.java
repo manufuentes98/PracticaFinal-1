@@ -18,7 +18,7 @@ private Puente puente;
 	public void actionPerformed(ActionEvent arg0) {
 		puente.getContentPane().removeAll();
 		puente.getContentPane().setLayout(new BorderLayout(0, 0));
-		puente.getContentPane().add(puente.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido());
+		puente.getContentPane().add(puente.getVistaEjecutarAltaPedido());
 		puente.repaint();
 		puente.revalidate();		
 	}	
