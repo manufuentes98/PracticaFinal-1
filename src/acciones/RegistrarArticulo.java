@@ -33,7 +33,7 @@ public class RegistrarArticulo implements ActionListener {
 				vista.getTextNombreAltaArticulo().getText(), vista.getTextDescripcionAltaArticulo().getText(),
 				Float.valueOf(vista.getTextPrecio().getText()));
 
-		if (new Logica(puente).darAltaArticulo(articulo)) {
+		if (puente.getLogica().darAltaArticulo(articulo)) {
 			vista.getTextNombreAltaArticulo().setText("");
 			vista.getTextDescripcionAltaArticulo().setText("");
 			vista.getTextPrecio().setText("");

@@ -10,6 +10,7 @@ import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Linea;
 import modelo.Pedido;
+import utiles.Utiles;
 import vista.VistaEjecutarAltaArticulo;
 import vista.VistaEjecutarAltaCliente;
 import vista.VistaEjecutarAltaPedido;
@@ -59,6 +60,7 @@ public class Validador {
 			vista.getLblComprobacion().setText("ERROR NUMEROS EN EL NOMBRE");
 			retorno = false;
 		}
+		Utiles.actualizar(puente);
 		// Y alguna mas que so os ocurra
 		return retorno;
 	}

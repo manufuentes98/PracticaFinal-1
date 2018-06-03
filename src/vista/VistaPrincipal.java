@@ -113,6 +113,10 @@ public class VistaPrincipal extends JFrame {
 		return panelCliente.getVistaAccederBuscarCliente();
 	}
 
+	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
+		return panelCliente.getVistaAccederBorrarCliente();
+	}
+
 	public JTextField getTextBuscarBuscarArticulo() {
 		return panelArticulo.getTextBuscarBuscarArticulo();
 	}
@@ -147,6 +151,20 @@ public class VistaPrincipal extends JFrame {
 
 	public PanelPedido getPanelPedido() {
 		return panelPedido;
+	}
+
+	public JButton getBtnAltaCliente() {
+		return panelCliente.getBtnAltaCliente();
+	}
+
+	public JButton getBtnBuscarCliente() {
+		return panelCliente.getBtnBuscarCliente();
+	}
+
+	
+
+	public JButton getBtnBorrarCliente() {
+		return panelCliente.getBtnBorrarCliente();
 	}
 
 	public VistaEjecutarAltaPedido getVistaEjecutarAltaPedido() {

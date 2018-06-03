@@ -33,9 +33,6 @@ public class GuardarCliente implements ActionListener {
 			vista.getTxtTelefono().setText("");
 			vista.getLblComprobacion().setText("cliente creado");
 		}
-		else {
-			vista.getLblComprobacion().setText("ERROR AL CREAR CLIENTE");
-		}
 		Utiles.actualizar(puente);
 		// else {
 		// vista.getLblComprobacion().setText("error al crear");

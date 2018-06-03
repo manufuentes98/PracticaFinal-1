@@ -8,9 +8,11 @@ import modelo.Pedido;
 
 public class Logica {
 	private Datos datos;
-		public Logica() {
+	private Validador validador;
+		public Logica(Validador validador) {
 		super();
 		this.datos = new Datos();
+		this.validador = validador;
 		}
 
 	public Boolean darAltaArticulo(Articulo articulo) {
@@ -26,7 +28,9 @@ public class Logica {
 	}
 
 	public Boolean darAltaCliente(Cliente cliente) {
+		if(validador.validarCliente(cliente, datos.getClientes()))
 		return datos.grabarCliente(cliente);
+		else return false;
 	}
 
 	public Cliente buscarCliente() {

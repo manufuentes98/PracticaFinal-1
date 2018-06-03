@@ -12,14 +12,11 @@ import acciones.ListenerAccederAltaPedido;
 import acciones.ListenerAccederBorrarCliente;
 import acciones.ListenerAccederBuscarArticulo;
 import acciones.ListenerAccederBuscarCliente;
-//import acciones.ListenerAccederPedido;
+import acciones.ListenerAccederBuscarPedido;
 import acciones.ListenerArticulo;
 import acciones.ListenerPedido;
 import acciones.RegistrarArticulo;
-<<<<<<< HEAD
 import acciones.ListenerCliente;
-=======
->>>>>>> branch 'master' of https://github.com/KAGADACORPORATION/PracticaFinal.git
 import acciones.RegistrarPedido;
 import vista.VistaPrincipal;
 
@@ -31,7 +28,7 @@ public class Puente extends VistaPrincipal {
 	public Puente() {
 		super();
 		this.validador = new Validador(this);
-		this.logica = new Logica();
+		this.logica = new Logica(this.validador);
 		asignarListeners();
 	}
 
@@ -45,9 +42,9 @@ public class Puente extends VistaPrincipal {
 		this.panelPedido.getBotonPedido().addActionListener(new ListenerPedido(this));
 		
 		this.panelPedido.getBtnAccederAltaPedido().addActionListener(new ListenerAccederAltaPedido(this));
-		this.panelPedido.getBtnConsultarPedidos().addActionListener(new ListenerAccederPedido(this));
+		this.panelPedido.getBtnConsultarPedidos().addActionListener(new ListenerAccederBuscarPedido(this));
 		
-		this.mntmBuscarPedido.addActionListener(new ListenerAccederPedido(this));
+		this.mntmBuscarPedido.addActionListener(new ListenerAccederBuscarPedido(this));
 		this.mntmNuevoPedido.addActionListener(new ListenerAccederAltaPedido(this));
 		
 		this.panelPedido.getBotonPedido().addActionListener(new RegistrarPedido(this));
@@ -85,6 +82,8 @@ public class Puente extends VistaPrincipal {
 		
 	}
 
+	
+	
 	public Logica getLogica() {
 		return logica;
 	}
