@@ -92,10 +92,15 @@ public class Puente extends VistaPrincipal {
 		listenerAccederBorrarCliente = new ListenerAccederBorrarCliente(this);
 		listenerAccederAltaPedido = new ListenerAccederAltaPedido(this);
 		listenerAccederBuscarPedido = new ListenerAccederBuscarPedido(this);
-		registrarPedido = new RegistrarPedido(this);
+		registrarPedido = new RegistrarPedido(this, validador);
 		listenerMainPedido = new ListenerMainPedido(this);
 		registarArticulo = new RegistrarArticulo(this, validador);
 		listenerMainCliente = new ListenerMainCliente(this);
 		guardarCliente = new GuardarCliente(this, validador);
+		addLinea = new AddLinea(this, validador);
+	}
+
+	public Logica getLogica() {
+		return logica;
 	}
 }

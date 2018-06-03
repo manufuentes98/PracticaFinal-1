@@ -2,35 +2,32 @@ package acciones;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JPanel;
-
+import control.Logica;
 import control.Puente;
-import modelo.Articulo;
+import control.Validador;
 import modelo.Pedido;
-import vista.VistaEjecutarAltaArticulo;
-import vista.VistaEjecutarAltaCliente;
 import vista.VistaEjecutarAltaPedido;
 
 public class RegistrarPedido implements ActionListener {
-	private Puente puente;
 
-	public RegistrarPedido(Puente puente) {
+	private Puente puente;
+	private Validador validador;
+
+	public RegistrarPedido(Puente puente, Validador validador) {
 		super();
 		this.puente = puente;
+		this.validador = validador;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		VistaEjecutarAltaCliente vista = puente.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente();
-
+		VistaEjecutarAltaPedido vista = puente.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido();
 		// assert !puente.getValidador().validarPedido() : "Error en algun
 		// campo";
-
-		Pedido p = new Pedido(0, cliente);
-		vista.getLblComprobacion().setText("pedido creado");
+		Logica logica = puente.getLogica();
+		Pedido pedido = logica.getPedidoTemporal();
+		vista.getLblMensaje().setText("pedido creado");
 		// else {
 		// vista.getLblMensaje().setText("error al crear");
-		System.out.println(p);
 	}
 }

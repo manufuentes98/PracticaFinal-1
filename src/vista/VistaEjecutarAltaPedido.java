@@ -27,6 +27,7 @@ public class VistaEjecutarAltaPedido extends JPanel {
 	private JComboBox comboBoxArticulo;
 	private JButton btnAddLinea;
 	private JComboBox comboBoxCliente;
+	private JLabel lblMensaje;
 
 	public VistaEjecutarAltaPedido() {
 		setLayout(new BorderLayout(0, 0));
@@ -142,11 +143,15 @@ public class VistaEjecutarAltaPedido extends JPanel {
 		gbc_btnConfirmarPedido.gridy = 8;
 		panel.add(btnConfirmarPedido, gbc_btnConfirmarPedido);
 
-		JLabel lblMensaje = new JLabel("Guardado con \u00E9xito");
+		lblMensaje = new JLabel("Guardado con \u00E9xito");
 		lblMensaje.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMensaje.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblMensaje.setForeground(Color.GREEN);
 		add(lblMensaje, BorderLayout.SOUTH);
+	}
+
+	public JLabel getLblMensaje() {
+		return lblMensaje;
 	}
 
 	public JTextField getTextIdentificacion() {
@@ -171,10 +176,6 @@ public class VistaEjecutarAltaPedido extends JPanel {
 
 	public JButton getBtnConfirmarPedido() {
 		return btnConfirmarPedido;
-	}
-
-	public JComboBox getComboBox() {
-		return comboBoxArticulo;
 	}
 
 }
