@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import modelo.Articulo;
 import modelo.DAO;
+import utiles.Utiles;
 
 class DAOTest {
 	private static final String RUTA = "./data/articulo4.dat";
@@ -25,7 +26,7 @@ class DAOTest {
 	@AfterEach
 	public void tearDown() throws Exception {
 		File carpetaGenerada = new File("./data");
-		borrarCarpeta(carpetaGenerada);
+		Utiles.borrarCarpeta(carpetaGenerada);
 	}
 	
 	@Test
@@ -60,12 +61,5 @@ class DAOTest {
 		assertTrue(new DAO<>().grabar(RUTA,articuloUno,true));
 		assertTrue(new DAO<>().grabar(RUTA,articuloDos,true));
 		assertTrue(new DAO<>().grabar(RUTA,articuloTres,true));
-	}
-	private void borrarCarpeta(File carpetaGenerada) {
-	    if (carpetaGenerada.isDirectory()) { 
-	        for (File f : carpetaGenerada.listFiles()) { 
-	        	borrarCarpeta(f);  } 
-	    } 
-	    carpetaGenerada.delete(); 
 	}
 }

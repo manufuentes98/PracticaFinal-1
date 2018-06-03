@@ -39,46 +39,46 @@ public class VistaEjecutarBuscarArticulo extends JPanel {
 		gbl_panel.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
 		gbl_panel.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
 		panel_2.setLayout(gbl_panel);
-
-		JLabel lblNewLabel = new JLabel("Descripcion:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.gridx = 3;
-		gbc_lblNewLabel.gridy = 2;
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		panel_2.add(lblNewLabel, gbc_lblNewLabel);
-
-		textDescripcionBuscarArticulo = new JTextField();
-		textDescripcionBuscarArticulo.setEditable(false);
-		GridBagConstraints gbc_textFieldDescripcion = new GridBagConstraints();
-		gbc_textFieldDescripcion.gridheight = 3;
-		gbc_textFieldDescripcion.gridwidth = 3;
-		gbc_textFieldDescripcion.insets = new Insets(0, 0, 5, 5);
-		gbc_textFieldDescripcion.fill = GridBagConstraints.BOTH;
-		gbc_textFieldDescripcion.gridx = 4;
-		gbc_textFieldDescripcion.gridy = 1;
-		panel_2.add(textDescripcionBuscarArticulo, gbc_textFieldDescripcion);
-		textDescripcionBuscarArticulo.setColumns(10);
-
-		JLabel lblPrecio = new JLabel("Precio:");
-		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
-		gbc_lblPrecio.anchor = GridBagConstraints.EAST;
-		gbc_lblPrecio.insets = new Insets(0, 0, 0, 5);
-		gbc_lblPrecio.gridx = 3;
-		gbc_lblPrecio.gridy = 5;
-		panel_2.add(lblPrecio, gbc_lblPrecio);
-
-		textPrecioBuscarArticulo = new JTextField();
-		textPrecioBuscarArticulo.setEditable(false);
-		GridBagConstraints gbc_textFieldPrecio = new GridBagConstraints();
-		gbc_textFieldPrecio.gridwidth = 3;
-		gbc_textFieldPrecio.insets = new Insets(0, 0, 0, 5);
-		gbc_textFieldPrecio.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textFieldPrecio.gridx = 4;
-		gbc_textFieldPrecio.gridy = 5;
-		panel_2.add(textPrecioBuscarArticulo, gbc_textFieldPrecio);
-		textPrecioBuscarArticulo.setColumns(10);
+						
+								JLabel lblNewLabel = new JLabel("Descripcion:");
+								lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+								GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+								gbc_lblNewLabel.gridx = 1;
+								gbc_lblNewLabel.gridy = 1;
+								gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
+								panel_2.add(lblNewLabel, gbc_lblNewLabel);
+				
+						textDescripcionBuscarArticulo = new JTextField();
+						textDescripcionBuscarArticulo.setEditable(false);
+						GridBagConstraints gbc_textFieldDescripcion = new GridBagConstraints();
+						gbc_textFieldDescripcion.gridheight = 2;
+						gbc_textFieldDescripcion.gridwidth = 5;
+						gbc_textFieldDescripcion.insets = new Insets(0, 0, 5, 5);
+						gbc_textFieldDescripcion.fill = GridBagConstraints.BOTH;
+						gbc_textFieldDescripcion.gridx = 3;
+						gbc_textFieldDescripcion.gridy = 1;
+						panel_2.add(textDescripcionBuscarArticulo, gbc_textFieldDescripcion);
+						textDescripcionBuscarArticulo.setColumns(10);
+				
+						JLabel lblPrecio = new JLabel("Precio:");
+						lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 15));
+						GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
+						gbc_lblPrecio.anchor = GridBagConstraints.EAST;
+						gbc_lblPrecio.insets = new Insets(0, 0, 5, 5);
+						gbc_lblPrecio.gridx = 1;
+						gbc_lblPrecio.gridy = 4;
+						panel_2.add(lblPrecio, gbc_lblPrecio);
+						
+								textPrecioBuscarArticulo = new JTextField();
+								textPrecioBuscarArticulo.setEditable(false);
+								GridBagConstraints gbc_textFieldPrecio = new GridBagConstraints();
+								gbc_textFieldPrecio.gridwidth = 3;
+								gbc_textFieldPrecio.insets = new Insets(0, 0, 5, 5);
+								gbc_textFieldPrecio.fill = GridBagConstraints.HORIZONTAL;
+								gbc_textFieldPrecio.gridx = 4;
+								gbc_textFieldPrecio.gridy = 4;
+								panel_2.add(textPrecioBuscarArticulo, gbc_textFieldPrecio);
+								textPrecioBuscarArticulo.setColumns(10);
 
 		JPanel panel_3 = new JPanel();
 		add(panel_3, BorderLayout.CENTER);

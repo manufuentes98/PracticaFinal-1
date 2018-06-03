@@ -1,9 +1,5 @@
 package control;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.ArrayList;
-import java.util.Vector;
-
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Datos;
@@ -12,13 +8,11 @@ import modelo.Pedido;
 
 public class Logica {
 	private Datos datos;
-	Puente puente;
-                          
-  public Logica(Puente puente) {
+	
+		public Logica() {
 		super();
 		this.datos = new Datos();
-		this.puente = puente;
-	}
+		}
 
 
 
@@ -36,17 +30,43 @@ public Boolean darAltaArticulo(Articulo articulo) {
   }
 
   public Boolean darAltaCliente(Cliente cliente) {
-	  assertTrue(new Validador(puente).validarCliente(cliente));
+
 	  return datos.grabarCliente(cliente);
   }
 
-  public Cliente buscarCliente() {
-  return null;
+  public Cliente buscarCliente(String nif) {
+	  for (int i = 0; i < datos.getClientes().size(); i++) {
+			Cliente clienteTemporal = datos.getClientes().get(i);
+			if(clienteTemporal.getDniCif().equals(nif)) {
+				return(clienteTemporal);
+			}
+		  }
+	  return null;
   }
 
-  public Boolean borrarCliente() {
-  return null;
+  public boolean borrarClientePorNombre(String nombre) {
+	  boolean retorno = false;
+	  for (int i = 0; i < datos.getClientes().size(); i++) {
+		Cliente clienteTemporal = datos.getClientes().get(i);
+		if(clienteTemporal.getRazonSocial().equals(nombre)) {
+			datos.borrarCliente(clienteTemporal);
+			retorno = true;
+		}
+	  }
+	return retorno;
   }
+  
+  public Boolean borrarClientePorNif(String nif) {
+	  boolean retorno = false;
+	  for (int i = 0; i < datos.getClientes().size(); i++) {
+		Cliente clienteTemporal = datos.getClientes().get(i);
+		if(clienteTemporal.getDniCif().equals(nif)) {
+			datos.borrarCliente(clienteTemporal);
+			retorno = true;
+		}
+	  }
+	return retorno;
+	  }
 
   private Boolean darAltaPedido() {
   return null;
@@ -63,5 +83,17 @@ public Boolean darAltaArticulo(Articulo articulo) {
   public Boolean insertarLineaPedido() {
   return null;
   }
+
+
+
+public Datos getDatos() {
+	return datos;
+}
+
+
+
+public void setDatos(Datos datos) {
+	this.datos = datos;
+}
 
 }

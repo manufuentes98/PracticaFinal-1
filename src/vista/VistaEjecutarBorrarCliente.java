@@ -12,16 +12,22 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class VistaEjecutarBorrarCliente extends JPanel{
+	  private JPanel VistaEjecutarBorrarCliente;
+	  private JTextField txtId;
+	  private JTextField txtNombre;
+	  private JButton btnValidar;
+	  private JLabel lblMensaje;
+	
+	
 	public VistaEjecutarBorrarCliente() {
 		setLayout(new BorderLayout(0, 0));
-		
 		JLabel lblBorrarCliente = new JLabel("Borrar Cliente");
 		lblBorrarCliente.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		lblBorrarCliente.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBorrarCliente.setFont(new Font("Tahoma", Font.BOLD, 35));
 		add(lblBorrarCliente, BorderLayout.NORTH);
 		
-		JLabel lblMensaje = new JLabel("Mensaje:");
+		lblMensaje = new JLabel("Mensaje:");
 		lblMensaje.setFont(new Font("Sylfaen", Font.PLAIN, 17));
 		add(lblMensaje, BorderLayout.SOUTH);
 		
@@ -58,7 +64,7 @@ public class VistaEjecutarBorrarCliente extends JPanel{
 		GridBagConstraints gbc_lblNombre = new GridBagConstraints();
 		gbc_lblNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNombre.gridx = 2;
-		gbc_lblNombre.gridy = 6;
+		gbc_lblNombre.gridy = 4;
 		panel.add(lblNombre, gbc_lblNombre);
 		
 		txtNombre = new JTextField();
@@ -67,21 +73,43 @@ public class VistaEjecutarBorrarCliente extends JPanel{
 		gbc_txtNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_txtNombre.gridwidth = 12;
 		gbc_txtNombre.gridx = 4;
-		gbc_txtNombre.gridy = 6;
+		gbc_txtNombre.gridy = 4;
 		panel.add(txtNombre, gbc_txtNombre);
 		txtNombre.setColumns(10);
 		
-		JButton btnValidar = new JButton("Validar");
+		btnValidar = new JButton("Validar");
 		btnValidar.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		GridBagConstraints gbc_btnValidar = new GridBagConstraints();
+		gbc_btnValidar.gridwidth = 11;
 		gbc_btnValidar.insets = new Insets(0, 0, 0, 5);
-		gbc_btnValidar.gridx = 14;
-		gbc_btnValidar.gridy = 10;
+		gbc_btnValidar.gridx = 4;
+		gbc_btnValidar.gridy = 6;
 		panel.add(btnValidar, gbc_btnValidar);
 	}
 
-  public JPanel VistaEjecutarBorrarCliente;
-  private JTextField txtId;
-  private JTextField txtNombre;
+
+	public JPanel getVistaEjecutarBorrarCliente() {
+		return VistaEjecutarBorrarCliente;
+	}
+
+
+	public JTextField getTxtId() {
+		return txtId;
+	}
+
+
+	public JTextField getTxtNombre() {
+		return txtNombre;
+	}
+
+
+	public JButton getBtnValidar() {
+		return btnValidar;
+	}
+
+
+	public JLabel getLblMensaje() {
+		return lblMensaje;
+	}
 
 }

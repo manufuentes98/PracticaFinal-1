@@ -1,10 +1,10 @@
 package acciones;
 
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import control.Puente;
+import utiles.Utiles;
 
 public class ListenerAccederBuscarCliente implements ActionListener{
 
@@ -18,10 +18,8 @@ public class ListenerAccederBuscarCliente implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		puente.getContentPane().removeAll();
-		puente.getContentPane().setLayout(new BorderLayout(0, 0));
 		puente.getContentPane().add(puente.getVistaAccederBuscarCliente().getVistaEjecutarBuscarCliente());
-		puente.repaint();
-		puente.revalidate();
+		Utiles.actualizar(puente);
 	}
 
 }

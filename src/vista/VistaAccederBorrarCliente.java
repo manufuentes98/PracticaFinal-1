@@ -10,8 +10,8 @@ import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 
 public class VistaAccederBorrarCliente extends JPanel {
-	protected JButton btnBorrarCliente;
-	protected VistaEjecutarBorrarCliente VistaEjecutarBorrarCliente = new VistaEjecutarBorrarCliente();
+	private JButton btnBorrarCliente;
+	private VistaEjecutarBorrarCliente VistaEjecutarBorrarCliente = new VistaEjecutarBorrarCliente();
 
 	public VistaAccederBorrarCliente() {
 		setLayout(new BorderLayout(0, 0));

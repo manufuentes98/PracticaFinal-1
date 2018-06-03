@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import modelo.Cliente;
 import vista.VistaEjecutarAltaCliente;
 
@@ -21,14 +24,14 @@ public Validador(Puente puente) {
 			return true;
 	}
 
-	public boolean validarCliente(Cliente cliente) {
+	public boolean validarCliente(Cliente cliente,ArrayList<Cliente> clientes) {
 		boolean retorno = true;
 		VistaEjecutarAltaCliente vista = puente.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente();
 		if (comprobarVacioCliente(cliente)) {
 			vista.getLblComprobacion().setText("ERROR CAMPO VACIO");
 			retorno = false;
 		}
-		if (comprobarSiExiste(cliente)) {
+		if (comprobarSiExiste(cliente,clientes)) {
 			vista.getLblComprobacion().setText("ERROR EL CLIENTE YA EXISTE");
 			retorno = false ;
 		}
@@ -49,31 +52,11 @@ public Validador(Puente puente) {
 		// TODO Auto-generated method stub
 		return true;
 	}
-	private boolean comprobarSiExiste(Cliente cliente) {
+	private boolean comprobarSiExiste(Cliente cliente,ArrayList<Cliente> clientes) {
 		boolean retorno =false;
-		FileInputStream flujoR = null;
-		ObjectInputStream adaptadorR = null;
-		Cliente clienteTemporal;
-			try {
-				File file = new File("./data/clientes.data");
-				flujoR=new FileInputStream(file);
-				adaptadorR=new ObjectInputStream(flujoR);
-				clienteTemporal=(Cliente) adaptadorR.readObject();
-				while (clienteTemporal != null) {
-					if(cliente.equals(clienteTemporal))retorno = true;
-					clienteTemporal = (Cliente) adaptadorR.readObject();
-				}
-				
-			} catch (IOException | ClassNotFoundException e) {	
-				System.out.println("fin de lectura comprobacion si cliente existe en alta");
-			}
-			
-			try {
-				adaptadorR.close();
-				flujoR.close();
-			} catch (IOException e) {
-				System.out.println("flujo cerrado");
-			}
+		for (Cliente clienteTemporal : clientes) {
+			if (clienteTemporal.equals(cliente))retorno=true;
+		}
 		return retorno;
 	}
 	public boolean validarPedido() {
