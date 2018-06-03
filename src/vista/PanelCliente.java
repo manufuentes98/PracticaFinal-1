@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class PanelCliente extends JPanel {
@@ -42,6 +43,18 @@ public class PanelCliente extends JPanel {
 
 	public JPanel getPanel() {
 		return panel;
+	}
+
+	public JTextField getTxtId() {
+		return vistaAccederBorrarCliente.getTxtId();
+	}
+
+	public JTextField getTxtNombre() {
+		return vistaAccederBorrarCliente.getTxtNombre();
+	}
+
+	public JButton getBtnValidar() {
+		return vistaAccederBorrarCliente.getBtnValidar();
 	}
 
 	public JLabel getLblClientes() {
