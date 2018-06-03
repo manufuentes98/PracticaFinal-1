@@ -11,9 +11,10 @@ import javax.swing.SwingConstants;
 
 public class PanelCliente extends JPanel {
 
-	protected JButton BotonCliente;
+	private JButton BotonCliente;
 	private VistaAccederAltaCliente vistaAccederAltaCliente = new VistaAccederAltaCliente();
 	private VistaAccederBuscarCliente vistaAccederBuscarCliente = new VistaAccederBuscarCliente();
+	private VistaAccederBorrarCliente vistaAccederBorrarCliente = new VistaAccederBorrarCliente();
 	private JPanel panel;
 	private JLabel lblClientes;
 
@@ -57,6 +58,18 @@ public class PanelCliente extends JPanel {
 
 	public JButton getBtnBuscarCliente() {
 		return vistaAccederBuscarCliente.getBtnBuscarCliente();
+	}
+
+	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
+		return vistaAccederBorrarCliente;
+	}
+
+	public JButton getBtnBorrarCliente() {
+		return vistaAccederBorrarCliente.getBtnBorrarCliente();
+	}
+
+	public VistaEjecutarBorrarCliente getVistaEjecutarBorrarCliente() {
+		return vistaAccederBorrarCliente.getVistaEjecutarBorrarCliente();
 	}
 
 }

@@ -11,12 +11,10 @@ import vista.VistaEjecutarAltaPedido;
 public class RegistrarPedido implements ActionListener {
 
 	private Puente puente;
-	private Validador validador;
 
-	public RegistrarPedido(Puente puente, Validador validador) {
+	public RegistrarPedido(Puente puente) {
 		super();
 		this.puente = puente;
-		this.validador = validador;
 	}
 
 	@Override

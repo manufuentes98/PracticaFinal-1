@@ -4,8 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import control.Puente;
 import utiles.Utiles;
-import modelo.Cliente;
-import vista.VistaEjecutarAltaCliente;
 
 public class RegistrarCliente implements ActionListener {
 	private Puente puente;
