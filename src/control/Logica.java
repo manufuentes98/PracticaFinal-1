@@ -62,4 +62,14 @@ public class Logica {
 		return null;
 	}
 
+	private Pedido pedidoTemporal;
+
+	public Pedido getPedidoTemporal() {
+		return this.pedidoTemporal;
+	}
+
+	public void setPedidoTemporal(Pedido pedido) {
+		this.pedidoTemporal = pedido;
+	}
+
 }

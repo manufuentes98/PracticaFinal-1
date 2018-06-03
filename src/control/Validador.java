@@ -7,8 +7,11 @@ import java.io.ObjectInputStream;
 
 import modelo.Articulo;
 import modelo.Cliente;
+import modelo.Linea;
+import modelo.Pedido;
 import vista.VistaEjecutarAltaArticulo;
 import vista.VistaEjecutarAltaCliente;
+import vista.VistaEjecutarAltaPedido;
 
 public class Validador {
 	private Puente puente;
@@ -29,10 +32,10 @@ public class Validador {
 			vista.getLblMensaje().setText("ERROR EN EL PRECIO");
 			retorno = false;
 		}
-//		if (comprobarSiExiste(articulo)) {
-//			vista.getLblMensaje().setText("ERROR EL ARTICULO YA EXISTE");
-//			retorno = false;
-//		}
+		// if (comprobarSiExiste(articulo)) {
+		// vista.getLblMensaje().setText("ERROR EL ARTICULO YA EXISTE");
+		// retorno = false;
+		// }
 		return retorno;
 	}
 
@@ -60,8 +63,61 @@ public class Validador {
 
 	}
 
-	private boolean comprobarNombreNoNumeros(String razonSocial) {
-		// TODO Auto-generated method stub
+	public boolean validarPedido(Pedido pedido) {
+		boolean retorno = true;
+		VistaEjecutarAltaPedido vista = puente.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido();
+//		if () {
+//			vista.getLblMensaje().setText("ERROR ");
+//			retorno = false;
+//		}
+		// if (comprobarSiExiste(articulo)) {
+		// vista.getLblMensaje().setText("ERROR EL ARTICULO YA EXISTE");
+		// retorno = false;
+		// }
+		return retorno;
+	}
+
+	public boolean validarLineaPedido(Linea linea) {
+		boolean retorno = true;
+		VistaEjecutarAltaPedido vista = puente.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido();
+		if (comprobarVacioLinea(linea)) {
+			vista.getLblMensaje().setText("ERROR CANTIDAD VACIO");
+			retorno = false;
+		}
+		return retorno;
+	}
+
+	public boolean comprobarVacioArticulo(String nombre, String descripcion, float precio) {
+		if (nombre.isEmpty() || descripcion.isEmpty() || String.valueOf(precio).isEmpty()) {
+			return true;
+		} else
+			return false;
+	}
+
+	private boolean comprobarVacioCliente(Cliente cliente) {
+		if (cliente.getDniCif().isEmpty() || cliente.getRazonSocial().isEmpty() || cliente.getDireccion().isEmpty()
+				|| cliente.getTelefono().isEmpty()) {
+			return true;
+		} else
+			return false;
+	}
+
+	private boolean comprobarVacioLinea(Linea linea) {
+		if (String.valueOf(linea.getCantidad()).isEmpty()) {
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean comprobarNumeros(String precio) {
+		char caracter;
+		for (int i = 0; i < precio.length(); i++) {
+			caracter = precio.charAt(i);
+
+			if (!Character.isDigit(caracter)) {
+				return false;
+			}
+		}
 		return true;
 	}
 
@@ -99,38 +155,8 @@ public class Validador {
 		return retorno;
 	}
 
-	public boolean validarPedido() {
-		return true;
-	}
-
-	public boolean validarLineaPedido() {
-		return true;
-	}
-
-	public boolean comprobarVacioArticulo(String nombre, String descripcion, float precio) {
-		if (nombre.isEmpty() || descripcion.isEmpty() || String.valueOf(precio).isEmpty()) {
-			return true;
-		} else
-			return false;
-	}
-
-	private boolean comprobarVacioCliente(Cliente cliente) {
-		if (cliente.getDniCif().isEmpty() || cliente.getRazonSocial().isEmpty() || cliente.getDireccion().isEmpty()
-				|| cliente.getTelefono().isEmpty()) {
-			return true;
-		} else
-			return false;
-	}
-
-	public boolean comprobarNumeros(String precio) {
-		char caracter;
-		for (int i = 0; i < precio.length(); i++) {
-			caracter = precio.charAt(i);
-
-			if (!Character.isDigit(caracter)) {
-				return false;
-			}
-		}
+	private boolean comprobarNombreNoNumeros(String razonSocial) {
+		// TODO Auto-generated method stub
 		return true;
 	}
 
