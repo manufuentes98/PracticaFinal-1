@@ -9,10 +9,10 @@ import javax.swing.JPanel;
 
 import control.Puente;
 
-public class ListenerMainArticulo implements ActionListener {
+public class ListenerArticulo implements ActionListener {
 	private Puente puente;
 
-	public ListenerMainArticulo(Puente puente) {
+	public ListenerArticulo(Puente puente) {
 		super();
 		this.puente = puente;
 	}

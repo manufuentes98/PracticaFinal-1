@@ -54,9 +54,9 @@ public class DAO<T>  {
 	}
 
 	public boolean grabar(String path, Object t, boolean adicion) {
-		File file = new File(path);
+		
 		boolean retorno = true;
-		boolean existe = file.exists() && adicion;
+		boolean existe = new File(path).exists() && adicion;
 		FileOutputStream flujoW = abrir(path, adicion);
 		try {
 			ObjectOutputStream adaptadorW = null;

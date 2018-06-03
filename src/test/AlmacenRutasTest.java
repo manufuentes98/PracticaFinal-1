@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import modelo.AlmacenRutas;
 import modelo.Articulo;
+import utiles.Utiles;
 
 public class AlmacenRutasTest {
 
@@ -32,15 +33,7 @@ public class AlmacenRutasTest {
 	@AfterEach
 	public void tearDown() throws Exception {
 		File carpetaGenerada = new File("./data");
-		borrarCarpeta(carpetaGenerada);
-	}
-
-	private void borrarCarpeta(File carpetaGenerada) {
-	    if (carpetaGenerada.isDirectory()) { 
-	        for (File f : carpetaGenerada.listFiles()) { 
-	        	borrarCarpeta(f);  } 
-	    } 
-	    carpetaGenerada.delete(); 
+		Utiles.borrarCarpeta(carpetaGenerada);
 	}
 
 	@Test

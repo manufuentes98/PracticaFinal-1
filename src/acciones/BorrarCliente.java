@@ -12,6 +12,10 @@ public class BorrarCliente implements ActionListener{
 
 	public Puente puente;
 
+	public BorrarCliente(Puente puente) {
+		this.puente = puente;
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import modelo.AlmacenIndice;
 import modelo.Articulo;
 import modelo.Cliente;
+import utiles.Utiles;
 
 public class AlmacenIndiceTest {
 	private static final String CLIENTES_DAT = "./data/clientes.dat";
@@ -63,14 +64,7 @@ public class AlmacenIndiceTest {
 	@AfterEach
 	public void tearDown() throws Exception {
 		File carpetaGenerada = new File("./data");
-		borrarCarpeta(carpetaGenerada);
+		Utiles.borrarCarpeta(carpetaGenerada);
 	}
-	
-	private void borrarCarpeta(File carpetaGenerada) {
-	    if (carpetaGenerada.isDirectory()) { 
-	        for (File f : carpetaGenerada.listFiles()) { 
-	        	borrarCarpeta(f);  } 
-	    } 
-	    carpetaGenerada.delete(); 
-	}
+
 }

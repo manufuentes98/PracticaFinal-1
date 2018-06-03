@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-
+import java.util.ArrayList;
+import java.util.Iterator;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Linea;
@@ -39,14 +40,14 @@ public class Validador {
 		return retorno;
 	}
 
-	public boolean validarCliente(Cliente cliente) {
+	public boolean validarCliente(Cliente cliente,ArrayList<Cliente> clientes) {
 		boolean retorno = true;
 		VistaEjecutarAltaCliente vista = puente.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente();
 		if (comprobarVacioCliente(cliente)) {
 			vista.getLblComprobacion().setText("ERROR CAMPO VACIO");
 			retorno = false;
 		}
-		if (comprobarSiExiste(cliente)) {
+		if (comprobarSiExiste(cliente,clientes)) {
 			vista.getLblComprobacion().setText("ERROR EL CLIENTE YA EXISTE");
 			retorno = false;
 		}
@@ -60,7 +61,17 @@ public class Validador {
 		}
 		// Y alguna mas que so os ocurra
 		return retorno;
-
+	}
+	
+	private boolean comprobarSiExiste(Cliente cliente,ArrayList<Cliente> clientes) {
+		boolean retorno =false;
+		for (Cliente clienteTemporal : clientes) {
+			if (clienteTemporal.equals(cliente))retorno=true;
+		}
+		return retorno;
+	}
+	public boolean validarPedido() {
+		return true;
 	}
 
 	public boolean validarPedido(Pedido pedido) {
