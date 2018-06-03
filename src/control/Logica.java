@@ -1,5 +1,7 @@
 package control;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Vector;
@@ -9,59 +11,55 @@ import modelo.Cliente;
 import modelo.Datos;
 import modelo.Pedido;
 
-
 public class Logica {
 	private Datos datos;
 	Puente puente;
-                          
-  public Logica(Puente puente) {
+
+	public Logica(Puente puente) {
 		super();
 		this.datos = new Datos();
 		this.puente = puente;
 	}
 
+	public Boolean darAltaArticulo(Articulo articulo) {
+		return datos.grabarArticulo(articulo);
+	}
 
+	public Articulo buscarArticulo() {
+		return null;
+	}
 
-public Boolean darAltaArticulo(Articulo articulo) {
-	  
-	  return null;
-  }
+	public Boolean modificarPrecio() {
+		return null;
+	}
 
-  public Articulo buscarArticulo() {
-  return null;
-  }
+	public Boolean darAltaCliente(Cliente cliente) {
+		assertTrue(new Validador(puente).validarCliente(cliente));
+		return datos.grabarCliente(cliente);
+	}
 
-  public Boolean modificarPrecio() {
-  return null;
-  }
+	public Cliente buscarCliente() {
+		return null;
+	}
 
-  public Boolean darAltaCliente(Cliente cliente) {
-	  assertTrue(new Validador(puente).validarCliente(cliente));
-	  return datos.grabarCliente(cliente);
-  }
+	public Boolean borrarCliente() {
+		return null;
+	}
 
-  public Cliente buscarCliente() {
-  return null;
-  }
+	private Boolean darAltaPedido() {
+		return null;
+	}
 
-  public Boolean borrarCliente() {
-  return null;
-  }
+	public Pedido consultarPedido() {
+		return null;
+	}
 
-  private Boolean darAltaPedido() {
-  return null;
-  }
+	public ArrayList consultarHistorico() {
+		return null;
+	}
 
-  public Pedido consultarPedido() {
-  return null;
-  }
-
-  public ArrayList consultarHistorico() {
-  return null;
-  }
-
-  public Boolean insertarLineaPedido() {
-  return null;
-  }
+	public Boolean insertarLineaPedido() {
+		return null;
+	}
 
 }
