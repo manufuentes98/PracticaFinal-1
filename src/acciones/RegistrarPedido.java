@@ -21,7 +21,7 @@ public class RegistrarPedido implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		VistaEjecutarAltaPedido vista = puente.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido();
+		VistaEjecutarAltaPedido vista = puente.getVistaEjecutarAltaPedido();
 		// assert !puente.getValidador().validarPedido() : "Error en algun
 		// campo";
 		Logica logica = puente.getLogica();

@@ -39,7 +39,6 @@ public class Puente extends VistaPrincipal {
 	private ListenerAccederBuscarArticulo listenerAccederBuscarArticulo;
 	private ListenerAccederAltaCliente listenerAccederAltaCliente;
 	private ListenerAccederBuscarCliente listenerAccederBuscarCliente;
-	private ListenerAccederBorrarCliente listenerAccederBorrarCliente;
 	private ListenerAccederAltaPedido listenerAccederAltaPedido;
 	private ListenerAccederBuscarPedido listenerAccederBuscarPedido;
 	private ListenerMainPedido listenerMainPedido;
@@ -65,21 +64,20 @@ public class Puente extends VistaPrincipal {
 
 		this.panelCliente.getBotonCliente().addActionListener(listenerMainCliente);
 		this.panelCliente.getBtnAltaCliente().addActionListener(listenerAccederAltaCliente);
-		this.panelCliente.getBtnBorrarCliente().addActionListener(listenerAccederBorrarCliente);
 		this.panelCliente.getBtnBuscarCliente().addActionListener(listenerAccederBuscarCliente);
 		this.mntmBuscarCliente.addActionListener(listenerAccederBuscarCliente);
 		this.mntmDarAltaCliente.addActionListener(listenerAccederAltaCliente);
 		this.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente().getBtnValidar()
 				.addActionListener(guardarCliente);
 
-		this.panelPedido.getBotonPedido().addActionListener(listenerMainPedido);
+		this.getBotonPedido().addActionListener(listenerMainPedido);
 		this.panelPedido.getBtnAccederAltaPedido().addActionListener(listenerAccederAltaPedido);
 		this.panelPedido.getBtnConsultarPedidos().addActionListener(listenerAccederBuscarPedido);
 		this.mntmBuscarPedido.addActionListener(listenerAccederBuscarPedido);
 		this.mntmNuevoPedido.addActionListener(listenerAccederAltaPedido);
-		this.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido().getBtnConfirmarPedido()
+		this.getVistaEjecutarAltaPedido().getBtnConfirmarPedido()
 				.addActionListener(registrarPedido);
-		this.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido().getBtnAddLinea().addActionListener(addLinea);
+		this.getVistaEjecutarAltaPedido().getBtnAddLinea().addActionListener(addLinea);
 
 	}
 
@@ -89,7 +87,6 @@ public class Puente extends VistaPrincipal {
 		listenerAccederBuscarArticulo = new ListenerAccederBuscarArticulo(this);
 		listenerAccederAltaCliente = new ListenerAccederAltaCliente(this);
 		listenerAccederBuscarCliente = new ListenerAccederBuscarCliente(this);
-		listenerAccederBorrarCliente = new ListenerAccederBorrarCliente(this);
 		listenerAccederAltaPedido = new ListenerAccederAltaPedido(this);
 		listenerAccederBuscarPedido = new ListenerAccederBuscarPedido(this);
 		registrarPedido = new RegistrarPedido(this, validador);
