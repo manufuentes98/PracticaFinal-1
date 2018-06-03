@@ -8,8 +8,6 @@ import control.Puente;
 
 public class BorrarCliente implements ActionListener{
 
-	public Logica logica;
-
 	public Puente puente;
 
 	public BorrarCliente(Puente puente) {
@@ -18,8 +16,19 @@ public class BorrarCliente implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		if(this.puente.getTxtId().getText().isEmpty()) {
+			System.out.println("deberia borrar por nombre");
+			this.puente.getLogica().borrarClientePorNombre(String.valueOf(this.puente.getTxtNombre().getText()));
+		}
+		else if(this.puente.getTxtNombre().getText().isEmpty()){
+			System.out.println("deberia borrar por nif");
+			this.puente.getLogica().borrarClientePorNif(String.valueOf(this.puente.getTxtId().getText()));
+		}
 		
+		else {
+			System.out.println("deberia borrar por nif");
+			this.puente.getLogica().borrarClientePorNif(String.valueOf(this.puente.getTxtId().getText()));
+		}
 	}
 
 }

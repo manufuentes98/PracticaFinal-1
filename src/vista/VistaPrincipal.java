@@ -163,10 +163,27 @@ public class VistaPrincipal extends JFrame {
 
 	
 
+	public JTextField getTxtId() {
+		return panelCliente.getTxtId();
+	}
+
+	public JTextField getTxtNombre() {
+		return panelCliente.getTxtNombre();
+	}
+
+	public JButton getBtnValidar() {
+		return panelCliente.getBtnValidar();
+	}
+
+	public JButton getBotonCliente() {
+		return panelCliente.getBotonCliente();
+	}
+
 	public JButton getBtnBorrarCliente() {
 		return panelCliente.getBtnBorrarCliente();
 	}
 
+	
 	public VistaEjecutarAltaPedido getVistaEjecutarAltaPedido() {
 		return panelPedido.getVistaEjecutarAltaPedido();
 	}

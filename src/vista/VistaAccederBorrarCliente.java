@@ -1,6 +1,8 @@
 package vista;
 
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -28,6 +30,22 @@ public class VistaAccederBorrarCliente extends JPanel {
 
 	public JButton getBtnBorrarCliente() {
 		return btnBorrarCliente;
+	}
+
+	public JTextField getTxtId() {
+		return VistaEjecutarBorrarCliente.getTxtId();
+	}
+
+	public JTextField getTxtNombre() {
+		return VistaEjecutarBorrarCliente.getTxtNombre();
+	}
+
+	public JButton getBtnValidar() {
+		return VistaEjecutarBorrarCliente.getBtnValidar();
+	}
+
+	public JLabel getLblMensaje() {
+		return VistaEjecutarBorrarCliente.getLblMensaje();
 	}
 
 	public VistaEjecutarBorrarCliente getVistaEjecutarBorrarCliente() {

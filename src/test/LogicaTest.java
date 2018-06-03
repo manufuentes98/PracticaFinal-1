@@ -16,6 +16,13 @@ import utiles.Utiles;
 class LogicaTest {
 
 	Puente puente = new Puente();
+	
+	@BeforeEach
+	public void tearUp() throws Exception {
+		File carpetaGenerada = new File("./data");
+		Utiles.borrarCarpeta(carpetaGenerada);
+	}
+	
 	@AfterEach
 	public void tearDown() throws Exception {
 		File carpetaGenerada = new File("./data");
