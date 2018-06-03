@@ -25,20 +25,36 @@ public class RegistrarArticulo implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		VistaEjecutarAltaArticulo vista = puente.getVistaEjecutarAltaArticulo();
 
-		assert !this.validador.validarArticulo(vista.getTextNombreAltaArticulo().getText(),
+		/*assert !this.validador.validarArticulo(new Articulo(1, vista.getTextNombreAltaArticulo().getText(),
 				vista.getTextDescripcionAltaArticulo().getText(),
-				vista.getTextPrecio().getText()) : "Error en algun campo";
+				Float.valueOf(vista.getTextPrecio().getText()))) : "Error en algun campo";*/
 
-		if (new Logica(puente).darAltaArticulo(new Articulo(1, vista.getTextNombreAltaArticulo().getText(),
-				vista.getTextDescripcionAltaArticulo().getText(), Float.valueOf(vista.getTextPrecio().getText())))) {
+		Articulo articulo = new Articulo(getIdArticulo(),
+				vista.getTextNombreAltaArticulo().getText(), vista.getTextDescripcionAltaArticulo().getText(),
+				Float.valueOf(vista.getTextPrecio().getText()));
+
+		if (new Logica(puente).darAltaArticulo(articulo)) {
 			vista.getTextNombreAltaArticulo().setText("");
 			vista.getTextDescripcionAltaArticulo().setText("");
 			vista.getTextPrecio().setText("");
 			vista.getLblMensaje().setText("Articulo creado");
 		} else
+			disminuirId();
 			vista.getLblMensaje().setText("error al crear");
 
 		Utiles.actualizar(puente);
+	}
+	
+	private int idArticulo = 0;
+
+	public int getIdArticulo() {
+		this.idArticulo=this.idArticulo+1;
+		return idArticulo;
+	}
+	
+	public int disminuirId() {
+		this.idArticulo=this.idArticulo-1;
+		return idArticulo;
 	}
 
 }

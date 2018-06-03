@@ -62,4 +62,11 @@ public class Logica {
 		return null;
 	}
 
+	private int idArticulo = 0;
+
+	public int getIdArticulo() {
+		this.idArticulo=this.idArticulo+1;
+		return idArticulo;
+	}
+
 }

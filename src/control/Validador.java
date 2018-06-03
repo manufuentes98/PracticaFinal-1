@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+
+import modelo.Articulo;
 import modelo.Cliente;
 import vista.VistaEjecutarAltaArticulo;
 import vista.VistaEjecutarAltaCliente;
@@ -16,17 +18,21 @@ public class Validador {
 		this.puente = puente;
 	}
 
-	public boolean validarArticulo(String nombre, String descripcion, String precio) {
+	public boolean validarArticulo(Articulo articulo) {
 		boolean retorno = true;
 		VistaEjecutarAltaArticulo vista = puente.getVistaEjecutarAltaArticulo();
-		if (comprobarVacioArticulo(nombre, descripcion, precio)) {
+		if (comprobarVacioArticulo(articulo.getNombre(), articulo.getDescripcion(), articulo.getCurrentPrice())) {
 			vista.getLblMensaje().setText("ERROR CAMPO VACIO");
 			retorno = false;
 		}
-		if (comprobarNumeros(precio)) {
+		if (comprobarNumeros(String.valueOf(articulo.getCurrentPrice()))) {
 			vista.getLblMensaje().setText("ERROR EN EL PRECIO");
 			retorno = false;
 		}
+//		if (comprobarSiExiste(articulo)) {
+//			vista.getLblMensaje().setText("ERROR EL ARTICULO YA EXISTE");
+//			retorno = false;
+//		}
 		return retorno;
 	}
 
@@ -57,6 +63,11 @@ public class Validador {
 	private boolean comprobarNombreNoNumeros(String razonSocial) {
 		// TODO Auto-generated method stub
 		return true;
+	}
+
+	private boolean comprobarSiExiste(Articulo articulo) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	private boolean comprobarSiExiste(Cliente cliente) {
@@ -96,8 +107,8 @@ public class Validador {
 		return true;
 	}
 
-	public boolean comprobarVacioArticulo(String nombre, String descripcion, String precio) {
-		if (nombre.isEmpty() || descripcion.isEmpty() || precio.isEmpty()) {
+	public boolean comprobarVacioArticulo(String nombre, String descripcion, float precio) {
+		if (nombre.isEmpty() || descripcion.isEmpty() || String.valueOf(precio).isEmpty()) {
 			return true;
 		} else
 			return false;
