@@ -20,7 +20,7 @@ public class VistaAccederAltaPedido extends JPanel {
 	public VistaAccederAltaPedido() {
 		vistaEjecutarAltaPedido = new VistaEjecutarAltaPedido();
 		btnAccederAltaPedido = new JButton("");
-		//ImageIcon imageIcon= new ImageIcon(new File(pathname))
+		// ImageIcon imageIcon= new ImageIcon(new File(pathname))
 		btnAccederAltaPedido.setIcon(new ImageIcon(VistaAccederAltaPedido.class
 				.getResource("/com/sun/javafx/webkit/prism/resources/mediaVolumeThumb.png")));
 		btnAccederAltaPedido.addActionListener(new ActionListener() {
@@ -43,20 +43,11 @@ public class VistaAccederAltaPedido extends JPanel {
 	}
 
 	public JPanel getVistaAccederAltaPedido() {
-		return VistaAccederAltaPedido;
+		return vistaEjecutarAltaPedido;
 	}
 
 	public VistaEjecutarAltaPedido getVistaEjecutarAltaPedido() {
 		return vistaEjecutarAltaPedido;
 	}
 
-	public void setVistaEjecutarAltaPedido(VistaEjecutarAltaPedido vistaEjecutarAltaPedido) {
-		this.vistaEjecutarAltaPedido = vistaEjecutarAltaPedido;
-	}
-
-	public void setVistaAccederAltaPedido(JPanel vistaAccederAltaPedido) {
-		VistaAccederAltaPedido = vistaAccederAltaPedido;
-	}
-
-	public JPanel VistaAccederAltaPedido;
 }

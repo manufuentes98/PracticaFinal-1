@@ -14,7 +14,6 @@ public class PanelCliente extends JPanel {
 	protected JButton BotonCliente;
 	private VistaAccederAltaCliente vistaAccederAltaCliente = new VistaAccederAltaCliente();
 	private VistaAccederBuscarCliente vistaAccederBuscarCliente = new VistaAccederBuscarCliente();
-	private VistaAccederBorrarCliente vistaAccederBorrarCliente = new VistaAccederBorrarCliente();
 	private JPanel panel;
 	private JLabel lblClientes;
 
@@ -50,14 +49,6 @@ public class PanelCliente extends JPanel {
 
 	public JButton getBotonCliente() {
 		return BotonCliente;
-	}
-
-	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
-		return vistaAccederBorrarCliente;
-	}
-
-	public JButton getBtnBorrarCliente() {
-		return vistaAccederBorrarCliente.getBtnBorrarCliente();
 	}
 
 	public JButton getBtnAltaCliente() {

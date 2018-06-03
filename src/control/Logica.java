@@ -1,38 +1,37 @@
 package control;
+
 import java.util.ArrayList;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Datos;
 import modelo.Pedido;
 
-
 public class Logica {
 	private Datos datos;
-	
 		public Logica() {
 		super();
 		this.datos = new Datos();
 		}
 
+	public Boolean darAltaArticulo(Articulo articulo) {
+		return datos.grabarArticulo(articulo);
+	}
 
+	public Articulo buscarArticulo() {
+		return null;
+	}
 
-public Boolean darAltaArticulo(Articulo articulo) {
-	  
-	  return null;
-  }
+	public Boolean modificarPrecio() {
+		return null;
+	}
 
-  public Articulo buscarArticulo() {
-  return null;
-  }
+	public Boolean darAltaCliente(Cliente cliente) {
+		return datos.grabarCliente(cliente);
+	}
 
-  public Boolean modificarPrecio() {
-  return null;
-  }
-
-  public Boolean darAltaCliente(Cliente cliente) {
-
-	  return datos.grabarCliente(cliente);
-  }
+	public Cliente buscarCliente() {
+		return null;
+	}
 
   public Cliente buscarCliente(String nif) {
 	  for (int i = 0; i < datos.getClientes().size(); i++) {
@@ -68,21 +67,23 @@ public Boolean darAltaArticulo(Articulo articulo) {
 	return retorno;
 	  }
 
-  private Boolean darAltaPedido() {
-  return null;
-  }
+	public ArrayList consultarHistorico() {
+		return null;
+	}
 
-  public Pedido consultarPedido() {
-  return null;
-  }
+	public Boolean insertarLineaPedido() {
+		return null;
+	}
 
-  public ArrayList consultarHistorico() {
-  return null;
-  }
+	private Pedido pedidoTemporal;
 
-  public Boolean insertarLineaPedido() {
-  return null;
-  }
+	public Pedido getPedidoTemporal() {
+		return this.pedidoTemporal;
+	}
+
+	public void setPedidoTemporal(Pedido pedido) {
+		this.pedidoTemporal = pedido;
+	}
 
 
 

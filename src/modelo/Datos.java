@@ -70,5 +70,8 @@ public class Datos {
 	public void setClientes(ArrayList<Cliente> clientes) {
 		this.clientes = clientes;
 	}
+	public boolean grabarArticulo(Articulo articulo) {
+		return new DAO<>().grabar("data/articulos.data", articulo);
+	}
 	
 }

@@ -47,7 +47,7 @@ public class VistaPrincipal extends JFrame {
 
 		JMenu mnClientes = new JMenu("Clientes");
 		menuBar.add(mnClientes);
-		
+
 		mntmDarAltaCliente = new JMenuItem("Nuevo Cliente");
 		mnClientes.add(mntmDarAltaCliente);
 
@@ -77,8 +77,6 @@ public class VistaPrincipal extends JFrame {
 
 	}
 
-	
-	
 	public JButton getBotonPedido() {
 		return panelPedido.getBotonPedido();
 	}
@@ -115,10 +113,6 @@ public class VistaPrincipal extends JFrame {
 		return panelCliente.getVistaAccederBuscarCliente();
 	}
 
-	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
-		return panelCliente.getVistaAccederBorrarCliente();
-	}
-	
 	public JTextField getTextBuscarBuscarArticulo() {
 		return panelArticulo.getTextBuscarBuscarArticulo();
 	}
@@ -143,31 +137,19 @@ public class VistaPrincipal extends JFrame {
 		return panelArticulo;
 	}
 
-	public void setBotonPedido(JButton botonPedido) {
-		panelPedido.setBotonPedido(botonPedido);
-	}
-
 	public VistaAccederAltaPedido getVistaAccederAltaPedido() {
 		return panelPedido.getVistaAccederAltaPedido();
-	}
-
-	public void setVistaAccederAltaPedido(VistaAccederAltaPedido vistaAccederAltaPedido) {
-		panelPedido.setVistaAccederAltaPedido(vistaAccederAltaPedido);
 	}
 
 	public VistaAccederPedido getVistaAccederPedido() {
 		return panelPedido.getVistaAccederPedido();
 	}
 
-	public void setVistaAccederPedido(VistaAccederPedido vistaAccederPedido) {
-		panelPedido.setVistaAccederPedido(vistaAccederPedido);
-	}
-
 	public PanelPedido getPanelPedido() {
 		return panelPedido;
 	}
 
-	public void setPanelPedido(PanelPedido panelPedido) {
-		this.panelPedido = panelPedido;
+	public VistaEjecutarAltaPedido getVistaEjecutarAltaPedido() {
+		return panelPedido.getVistaEjecutarAltaPedido();
 	}
 }

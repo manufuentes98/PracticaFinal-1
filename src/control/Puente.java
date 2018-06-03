@@ -16,7 +16,10 @@ import acciones.ListenerAccederBuscarCliente;
 import acciones.ListenerArticulo;
 import acciones.ListenerPedido;
 import acciones.RegistrarArticulo;
+<<<<<<< HEAD
 import acciones.ListenerCliente;
+=======
+>>>>>>> branch 'master' of https://github.com/KAGADACORPORATION/PracticaFinal.git
 import acciones.RegistrarPedido;
 import vista.VistaPrincipal;
 
@@ -42,10 +45,10 @@ public class Puente extends VistaPrincipal {
 		this.panelPedido.getBotonPedido().addActionListener(new ListenerPedido(this));
 		
 		this.panelPedido.getBtnAccederAltaPedido().addActionListener(new ListenerAccederAltaPedido(this));
-//		this.panelPedido.getBtnConsultarPedidos().addActionListener(new ListenerAccederPedido(this));
+		this.panelPedido.getBtnConsultarPedidos().addActionListener(new ListenerAccederPedido(this));
 		
-//		this.mntmBuscarPedido.addActionListener(new ListenerAccederPedido(this));
-//		this.mntmNuevoPedido.addActionListener(new ListenerAccederAltaPedido(this));
+		this.mntmBuscarPedido.addActionListener(new ListenerAccederPedido(this));
+		this.mntmNuevoPedido.addActionListener(new ListenerAccederAltaPedido(this));
 		
 		this.panelPedido.getBotonPedido().addActionListener(new RegistrarPedido(this));
 		
