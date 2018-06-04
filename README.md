@@ -5,6 +5,7 @@ Diagrama de casos de uso
 DIAGRAMA DE CLASES:
 <img src="https://i.gyazo.com/78db373f843adfa1e6623f5690ce7420.png" style="max-width:100%;">
 SECUENCIAS:
+
 •	Dar de Alta Articulo:
 
   o	Secuencia normal: introduce datos, se guarda el artículo correctamente.
