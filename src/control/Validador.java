@@ -52,11 +52,15 @@ public class Validador {
 			vista.getLblComprobacion().setText("ERROR EL CLIENTE YA EXISTE");
 			retorno = false;
 		}
-		if (comprobarDni(cliente.getDniCif())) {
+		if (!comprobarDni(cliente.getDniCif())) {
 			vista.getLblComprobacion().setText("ERROR DNI INCORRECTO");
 			retorno = false;
 		}
-		if (!comprobarNombreNoNumeros(cliente.getRazonSocial())) {
+		if (!comprobarTelefono(cliente.getTelefono())) {
+			vista.getLblComprobacion().setText("ERROR TELEFONO INCORRECTO");
+			retorno = false;
+		}
+		if (comprobarNombreNoNumeros(cliente.getRazonSocial())) {
 			vista.getLblComprobacion().setText("ERROR NUMEROS EN EL NOMBRE");
 			retorno = false;
 		}
@@ -171,13 +175,17 @@ public class Validador {
 	}
 
 	private boolean comprobarNombreNoNumeros(String razonSocial) {
-		// TODO Auto-generated method stub
-		return true;
+		if (!comprobarNumeros(razonSocial)) {
+			return false;
+		} else
+			return true;
 	}
 
 	public boolean comprobarTelefono(String telefono) {
-
-		return false;
+		if (telefono.length() == 9 && comprobarNumeros(telefono)) {
+			return true;
+		} else
+			return false;
 	}
 
 	public boolean comprobarDni(String dni) {
