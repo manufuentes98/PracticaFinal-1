@@ -5,8 +5,10 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import java.awt.GridLayout;
@@ -183,7 +185,10 @@ public class VistaPrincipal extends JFrame {
 		return panelCliente.getBtnBorrarCliente();
 	}
 
-	
+	public DefaultTableModel getModeloTabla() {
+		return panelCliente.getModeloTabla();
+	}
+
 	public VistaEjecutarAltaPedido getVistaEjecutarAltaPedido() {
 		return panelPedido.getVistaEjecutarAltaPedido();
 	}

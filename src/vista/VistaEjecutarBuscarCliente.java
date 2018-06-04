@@ -19,6 +19,7 @@ import javax.swing.JButton;
 public class VistaEjecutarBuscarCliente extends JPanel{
 	private JTextField textField;
 	private JButton btnBuscarCliente;
+	private DefaultTableModel modeloTabla;
 
 	/**
 	 * Create the frame.
@@ -33,7 +34,7 @@ public class VistaEjecutarBuscarCliente extends JPanel{
 			JScrollPane scrollPane = new JScrollPane();
 			panel_1.add(scrollPane,BorderLayout.CENTER);
 			String[] nombresColumnas = {"Nombre","DNI/CIF","Dirección","Teléfono"};
-			String data[][]={{"Alfredo","76235129R","C/España",""}};	
+			String[][] data = null;
 			JTable table = new JTable(new DefaultTableModel(data,nombresColumnas));
 			table.setEnabled(false);
 			scrollPane.setViewportView(table);
@@ -100,4 +101,14 @@ public class VistaEjecutarBuscarCliente extends JPanel{
 	public JButton getBtnBuscarCliente() {
 		return btnBuscarCliente;
 	}
+
+	public DefaultTableModel getModeloTabla() {
+		return modeloTabla;
+	}
+
+	public void setModeloTabla(DefaultTableModel modeloTabla) {
+		this.modeloTabla = modeloTabla;
+	}
+
+	
 }

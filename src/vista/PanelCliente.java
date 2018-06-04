@@ -7,8 +7,10 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 
 public class PanelCliente extends JPanel {
 
@@ -40,6 +42,7 @@ public class PanelCliente extends JPanel {
 	public VistaAccederBuscarCliente getVistaAccederBuscarCliente() {
 		return vistaAccederBuscarCliente;
 	}
+	
 
 	public JPanel getPanel() {
 		return panel;
@@ -55,6 +58,12 @@ public class PanelCliente extends JPanel {
 
 	public JButton getBtnValidar() {
 		return vistaAccederBorrarCliente.getBtnValidar();
+	}
+	
+	
+
+	public JLabel getLblMensaje() {
+		return vistaAccederBorrarCliente.getLblMensaje();
 	}
 
 	public JLabel getLblClientes() {
@@ -79,6 +88,10 @@ public class PanelCliente extends JPanel {
 
 	public JButton getBtnBorrarCliente() {
 		return vistaAccederBorrarCliente.getBtnBorrarCliente();
+	}
+
+	public DefaultTableModel getModeloTabla() {
+		return vistaAccederBuscarCliente.getModeloTabla();
 	}
 
 	public VistaEjecutarBorrarCliente getVistaEjecutarBorrarCliente() {

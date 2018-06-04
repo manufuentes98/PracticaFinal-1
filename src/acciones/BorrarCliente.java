@@ -16,19 +16,29 @@ public class BorrarCliente implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		boolean retorno = false;
 		if(this.puente.getTxtId().getText().isEmpty()) {
 			System.out.println("deberia borrar por nombre");
-			this.puente.getLogica().borrarClientePorNombre(String.valueOf(this.puente.getTxtNombre().getText()));
+			retorno = this.puente.getLogica().borrarClientePorNombre(String.valueOf(this.puente.getTxtNombre().getText()));
 		}
 		else if(this.puente.getTxtNombre().getText().isEmpty()){
 			System.out.println("deberia borrar por nif");
-			this.puente.getLogica().borrarClientePorNif(String.valueOf(this.puente.getTxtId().getText()));
+			retorno = this.puente.getLogica().borrarClientePorNif(String.valueOf(this.puente.getTxtId().getText()));
 		}
 		
 		else {
 			System.out.println("deberia borrar por nif");
-			this.puente.getLogica().borrarClientePorNif(String.valueOf(this.puente.getTxtId().getText()));
+			retorno = this.puente.getLogica().borrarClientePorNif(String.valueOf(this.puente.getTxtId().getText()));
 		}
+		if(retorno) {
+			this.puente.getVistaAccederBorrarCliente().getLblMensaje().setText("Cliente borrado");
+			this.puente.getVistaAccederBorrarCliente().getTxtId().setText("");
+			this.puente.getVistaAccederBorrarCliente().getTxtNombre().setText("");
+		}
+		else {
+			this.puente.getVistaAccederBorrarCliente().getLblMensaje().setText("Cliente no encontrado");
+		}
+		
 	}
 
 }

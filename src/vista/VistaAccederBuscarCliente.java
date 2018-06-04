@@ -1,15 +1,18 @@
 package vista;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
+import javax.swing.table.DefaultTableModel;
 
 public class VistaAccederBuscarCliente extends JPanel{
-	protected JButton btnBuscarCliente;
-	protected VistaEjecutarBuscarCliente VistaEjecutarBuscarCliente=new VistaEjecutarBuscarCliente();
+	private JButton btnBuscarCliente;
+	private VistaEjecutarBuscarCliente VistaEjecutarBuscarCliente=new VistaEjecutarBuscarCliente();
 	
 	public VistaAccederBuscarCliente() {
 		setLayout(new BorderLayout(0, 0));
@@ -30,6 +33,10 @@ public JButton getBtnBuscarCliente() {
 
 public VistaEjecutarBuscarCliente getVistaEjecutarBuscarCliente() {
 	return VistaEjecutarBuscarCliente;
+}
+
+public DefaultTableModel getModeloTabla() {
+	return VistaEjecutarBuscarCliente.getModeloTabla();
 }
 
 }
