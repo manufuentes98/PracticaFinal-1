@@ -41,14 +41,14 @@ public class Validador {
 		return retorno;
 	}
 
-	public boolean validarCliente(Cliente cliente,ArrayList<Cliente> clientes) {
+	public boolean validarCliente(Cliente cliente, ArrayList<Cliente> clientes) {
 		boolean retorno = true;
 		VistaEjecutarAltaCliente vista = puente.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente();
 		if (comprobarVacioCliente(cliente)) {
 			vista.getLblComprobacion().setText("ERROR CAMPO VACIO");
 			retorno = false;
 		}
-		if (comprobarSiExiste(cliente,clientes)) {
+		if (comprobarSiExiste(cliente, clientes)) {
 			vista.getLblComprobacion().setText("ERROR EL CLIENTE YA EXISTE");
 			retorno = false;
 		}
@@ -64,14 +64,16 @@ public class Validador {
 		// Y alguna mas que so os ocurra
 		return retorno;
 	}
-	
-	private boolean comprobarSiExiste(Cliente cliente,ArrayList<Cliente> clientes) {
-		boolean retorno =false;
+
+	private boolean comprobarSiExiste(Cliente cliente, ArrayList<Cliente> clientes) {
+		boolean retorno = false;
 		for (Cliente clienteTemporal : clientes) {
-			if (clienteTemporal.equals(cliente))retorno=true;
+			if (clienteTemporal.equals(cliente))
+				retorno = true;
 		}
 		return retorno;
 	}
+
 	public boolean validarPedido() {
 		return true;
 	}
@@ -79,10 +81,10 @@ public class Validador {
 	public boolean validarPedido(Pedido pedido) {
 		boolean retorno = true;
 		VistaEjecutarAltaPedido vista = puente.getVistaAccederAltaPedido().getVistaEjecutarAltaPedido();
-//		if () {
-//			vista.getLblMensaje().setText("ERROR ");
-//			retorno = false;
-//		}
+		// if () {
+		// vista.getLblMensaje().setText("ERROR ");
+		// retorno = false;
+		// }
 		// if (comprobarSiExiste(articulo)) {
 		// vista.getLblMensaje().setText("ERROR EL ARTICULO YA EXISTE");
 		// retorno = false;
@@ -179,7 +181,10 @@ public class Validador {
 	}
 
 	public boolean comprobarDni(String dni) {
-		return false;
+		if (dni.length() == 9 && Character.isLetter(dni.charAt(8)) && comprobarNumeros(dni.substring(0, 7))) {
+			return true;
+		} else
+			return false;
 	}
 
 }
