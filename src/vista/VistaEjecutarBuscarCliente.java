@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.util.Vector;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,7 +21,10 @@ import javax.swing.JButton;
 public class VistaEjecutarBuscarCliente extends JPanel{
 	private JTextField textField;
 	private JButton btnBuscarCliente;
-	private DefaultTableModel modeloTabla;
+	private String [][] data;
+	private String [] nombresColumnas={"Nombre","DNI/CIF","Dirección","Teléfono"};
+	
+	private DefaultTableModel modeloTabla=new DefaultTableModel(data,nombresColumnas);
 
 	/**
 	 * Create the frame.
@@ -33,9 +38,7 @@ public class VistaEjecutarBuscarCliente extends JPanel{
 			
 			JScrollPane scrollPane = new JScrollPane();
 			panel_1.add(scrollPane,BorderLayout.CENTER);
-			String[] nombresColumnas = {"Nombre","DNI/CIF","Dirección","Teléfono"};
-			String[][] data = null;
-			JTable table = new JTable(new DefaultTableModel(data,nombresColumnas));
+			JTable table = new JTable(modeloTabla);
 			table.setEnabled(false);
 			scrollPane.setViewportView(table);
 			
@@ -109,6 +112,5 @@ public class VistaEjecutarBuscarCliente extends JPanel{
 	public void setModeloTabla(DefaultTableModel modeloTabla) {
 		this.modeloTabla = modeloTabla;
 	}
-
 	
 }

@@ -188,8 +188,10 @@ public class VistaPrincipal extends JFrame {
 	public DefaultTableModel getModeloTabla() {
 		return panelCliente.getModeloTabla();
 	}
-
+	
+	
 	public VistaEjecutarAltaPedido getVistaEjecutarAltaPedido() {
 		return panelPedido.getVistaEjecutarAltaPedido();
 	}
+
 }
