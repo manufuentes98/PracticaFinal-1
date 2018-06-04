@@ -3,12 +3,16 @@ package acciones;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.table.DefaultTableModel;
+
 import control.Puente;
 import utiles.Utiles;
+import vista.VistaEjecutarBuscarCliente;
 
 public class ListenerAccederBuscarCliente implements ActionListener{
 
 	private Puente puente;
+	private VistaEjecutarBuscarCliente vistaEjecutarBuscarCliente;
 
 	public ListenerAccederBuscarCliente(Puente puente) {
 		super();
@@ -21,5 +25,14 @@ public class ListenerAccederBuscarCliente implements ActionListener{
 		puente.getContentPane().add(puente.getVistaAccederBuscarCliente().getVistaEjecutarBuscarCliente());
 		Utiles.actualizar(puente);
 	}
+
+	public VistaEjecutarBuscarCliente getVistaEjecutarBuscarCliente() {
+		return vistaEjecutarBuscarCliente;
+	}
+
+	public void setVistaEjecutarBuscarCliente(VistaEjecutarBuscarCliente vistaEjecutarBuscarCliente) {
+		this.vistaEjecutarBuscarCliente = vistaEjecutarBuscarCliente;
+	}
+
 
 }

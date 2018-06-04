@@ -1,13 +1,12 @@
 package test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import java.io.File;
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.After;
 import org.junit.Before;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import modelo.AlmacenIndice;
 import modelo.Articulo;
 import modelo.Cliente;
@@ -21,7 +20,7 @@ public class AlmacenIndiceTest {
 	private Articulo articuloDos;
 	private Articulo articuloTres;
 
-	@BeforeEach
+	@Before
 	public void setUp() {
 		instancia = new AlmacenIndice<>(INDICE_DAT, CLIENTES_DAT);
 		articuloUno = new Articulo(1, "Paco", "sa matao", 123);
@@ -61,7 +60,7 @@ public class AlmacenIndiceTest {
 		// Hay cosas que no se pueden contratar (assert de contrato)
 	}
 
-	@AfterEach
+	@After
 	public void tearDown() throws Exception {
 		File carpetaGenerada = new File("./data");
 		Utiles.borrarCarpeta(carpetaGenerada);
