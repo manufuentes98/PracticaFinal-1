@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 import control.Puente;
+import utiles.Utiles;
 
 public class ListenerArticulo implements ActionListener {
 	private Puente puente;
@@ -24,7 +25,6 @@ public class ListenerArticulo implements ActionListener {
 		puente.getPanelArticulo().setLayout(new GridLayout(2, 1, 0, 0));
 		puente.getPanelArticulo().add(puente.getVistaAccederAltaArticulo());
 		puente.getPanelArticulo().add(puente.getVistaAccederBuscarArticulo());
-		puente.repaint();
-		puente.revalidate();
+		Utiles.actualizar(puente);
 	}
 }
