@@ -17,7 +17,7 @@ public class ListenerAccederAltaCliente implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		puente.getContentPane().removeAll();
-		puente.getContentPane().add(puente.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente());
+		puente.getContentPane().add(puente.getVistaEjecutarAltaCliente());
 		Utiles.actualizar(puente);
 
 }

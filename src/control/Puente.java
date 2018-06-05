@@ -4,7 +4,6 @@ import javax.swing.JPanel;
 import acciones.AddLinea;
 import acciones.BorrarCliente;
 import acciones.BuscarArticulo;
-import acciones.BuscarCliente;
 import acciones.BuscarClienteKey;
 import acciones.GuardarCliente;
 import acciones.ListenerAccederAltaArticulo;
@@ -79,8 +78,7 @@ public class Puente extends VistaPrincipal {
 		
 		this.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente().getBtnValidar().addActionListener(new GuardarCliente(this));
 		this.getVistaAccederBorrarCliente().getVistaEjecutarBorrarCliente().getBtnValidar().addActionListener(new BorrarCliente(this));
-		this.getVistaAccederBuscarCliente().getVistaEjecutarBuscarCliente().getBtnBuscarCliente().addActionListener(new BuscarCliente(this));
-		//this.getVistaAccederBuscarCliente().getVistaEjecutarBuscarCliente().getTextField().addKeyListener(new BuscarClienteKey(this));
+		this.getVistaAccederBuscarCliente().getVistaEjecutarBuscarCliente().getTextField().addKeyListener(new BuscarClienteKey(this));
 	}
 
 	

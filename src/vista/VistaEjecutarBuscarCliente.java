@@ -51,7 +51,7 @@ public class VistaEjecutarBuscarCliente extends JPanel{
 			gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0};
 			panel_2.setLayout(gbl_panel);
 			
-			JLabel lblDNI = new JLabel("DNI/CIF");
+			JLabel lblDNI = new JLabel("Nombre");
 			lblDNI.setFont(new Font("Times New Roman", Font.BOLD, 20));
 			GridBagConstraints gbc_lblDNI = new GridBagConstraints();
 			gbc_lblDNI.gridwidth = 3;
@@ -71,7 +71,7 @@ public class VistaEjecutarBuscarCliente extends JPanel{
 			panel_2.add(textField, gbc_textField);
 			textField.setColumns(10);
 			
-			btnBuscarCliente = new JButton("BUSCAR");
+			btnBuscarCliente = new JButton("Mostrar Todos");
 			GridBagConstraints gbc_btnBuscarCliente = new GridBagConstraints();
 			gbc_btnBuscarCliente.gridwidth = 3;
 			gbc_btnBuscarCliente.insets = new Insets(0, 0, 5, 5);
