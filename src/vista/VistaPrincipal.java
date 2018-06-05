@@ -194,4 +194,16 @@ public class VistaPrincipal extends JFrame {
 		return panelPedido.getVistaEjecutarAltaPedido();
 	}
 
+	public VistaEjecutarBorrarCliente getVistaEjecutarBorrarCliente() {
+		return panelCliente.getVistaEjecutarBorrarCliente();
+	}
+
+	public VistaEjecutarAltaCliente getVistaEjecutarAltaCliente() {
+		return panelCliente.getVistaEjecutarAltaCliente();
+	}
+
+	public VistaEjecutarBuscarCliente getVistaEjecutarBuscarCliente() {
+		return panelCliente.getVistaEjecutarBuscarCliente();
+	}
+
 }

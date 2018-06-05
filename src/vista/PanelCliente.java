@@ -98,4 +98,12 @@ public class PanelCliente extends JPanel {
 		return vistaAccederBorrarCliente.getVistaEjecutarBorrarCliente();
 	}
 
+	public VistaEjecutarAltaCliente getVistaEjecutarAltaCliente() {
+		return vistaAccederAltaCliente.getVistaEjecutarAltaCliente();
+	}
+
+	public VistaEjecutarBuscarCliente getVistaEjecutarBuscarCliente() {
+		return vistaAccederBuscarCliente.getVistaEjecutarBuscarCliente();
+	}
+
 }
