@@ -14,7 +14,7 @@ import vista.VistaEjecutarBuscarCliente;
 
 public class BuscarClienteKey implements KeyListener {
 
-	public Puente puente;
+	private Puente puente;
 	private String cadena;
 
 	public BuscarClienteKey(Puente puente) {
@@ -24,6 +24,16 @@ public class BuscarClienteKey implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		
+
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
 		VistaEjecutarBuscarCliente vista = puente.getVistaAccederBuscarCliente().getVistaEjecutarBuscarCliente();
 		cadena = vista.getTextField().getText();
 		System.out.println(cadena);
@@ -43,15 +53,6 @@ public class BuscarClienteKey implements KeyListener {
 			}
 
 		}
-
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
 	}
 
 }

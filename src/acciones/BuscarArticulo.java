@@ -9,7 +9,7 @@ import vista.VistaEjecutarBuscarArticulo;
 
 public class BuscarArticulo implements KeyListener {
 
-	public Puente puente;
+	private	 Puente puente;
 	private String cadena;
 
 	public BuscarArticulo(Puente puente) {
