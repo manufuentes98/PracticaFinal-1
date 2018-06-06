@@ -1,13 +1,18 @@
 package vista;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import java.awt.GridLayout;
+import java.io.File;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import utiles.Utiles;
+
 import java.awt.Font;
 
 public class PanelArticulo extends JPanel {
@@ -24,7 +29,9 @@ public class PanelArticulo extends JPanel {
 		panel = new JPanel();
 		add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		ImageIcon imageIcon= new ImageIcon("img/articulos.jpg");	
 		botonArticulo = new JButton("");
+		botonArticulo.setIcon(Utiles.createScaledIcon(imageIcon, botonArticulo.getHeight()));
 		panel.add(botonArticulo);
 
 		lblArticulos = new JLabel("ARTICULOS");

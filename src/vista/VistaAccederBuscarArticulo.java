@@ -8,11 +8,14 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
 import javax.swing.table.DefaultTableModel;
 
+import utiles.Utiles;
+
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagLayout;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
@@ -33,6 +36,8 @@ public class VistaAccederBuscarArticulo extends JPanel {
 		add(lblBuscarArticulo, BorderLayout.SOUTH);
 		botonBuscarArticulo = new JButton("");
 		add(botonBuscarArticulo, BorderLayout.CENTER);
+		ImageIcon imageIcon= new ImageIcon("img/alta.png");	
+		botonBuscarArticulo.setIcon(Utiles.createScaledIcon(imageIcon, botonBuscarArticulo.getHeight()));
 	}
 
 	public JButton getBotonBuscarArticulo() {

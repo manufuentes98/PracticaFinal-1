@@ -1,5 +1,6 @@
 package vista;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -8,6 +9,8 @@ import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.SwingConstants;
+
+import utiles.Utiles;
 
 public class PanelPedido extends JPanel {
 
@@ -28,6 +31,8 @@ public class PanelPedido extends JPanel {
 		lblPedidos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPedidos.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(lblPedidos, BorderLayout.SOUTH);
+		ImageIcon imageIcon= new ImageIcon("img/pedidos.png");	
+		botonPedido.setIcon(Utiles.createScaledIcon(imageIcon, botonPedido.getHeight()));
 	}
 
 	public JLabel getLblPedidos() {

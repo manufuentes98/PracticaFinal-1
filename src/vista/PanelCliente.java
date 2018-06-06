@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,6 +12,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+
+import utiles.Utiles;
 
 public class PanelCliente extends JPanel {
 
@@ -30,6 +33,9 @@ public class PanelCliente extends JPanel {
 		lblClientes = new JLabel("CLIENTES");
 		lblClientes.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblClientes.setHorizontalAlignment(SwingConstants.CENTER);
+		ImageIcon imageIcon= new ImageIcon("img/clientes.png");	
+		BotonCliente.setIcon(Utiles.createScaledIcon(imageIcon, BotonCliente.getHeight()));
+
 		add(lblClientes, BorderLayout.SOUTH);
 	}
 
