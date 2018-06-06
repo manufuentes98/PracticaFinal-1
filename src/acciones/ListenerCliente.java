@@ -19,11 +19,10 @@ public class ListenerCliente implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		puente.getPanelCliente().getPanel().removeAll();
-		puente.getPanelCliente().getPanel().setLayout(new GridLayout(3, 0, 0, 0));
-		puente.getPanelCliente().getPanel().add(puente.getVistaAccederAltaCliente());
-		puente.getPanelCliente().getPanel().add(puente.getVistaAccederBuscarCliente());
-		puente.getPanelCliente().getPanel().add(puente.getVistaAccederBorrarCliente());
+		puente.getPanelCliente().removeAll();
+		puente.getPanelCliente().setLayout(new GridLayout(2, 0, 0, 0));
+		puente.getPanelCliente().add(puente.getVistaAccederAltaCliente());
+		puente.getPanelCliente().add(puente.getVistaAccederBuscarCliente());
 		Utiles.actualizar(puente);
 	}
 }

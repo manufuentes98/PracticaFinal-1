@@ -5,21 +5,25 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.GridLayout;
+
 import javax.swing.SwingConstants;
 
 public class PanelPedido extends JPanel {
 
 	private JButton botonPedido;
 	private VistaAccederAltaPedido vistaAccederAltaPedido = new VistaAccederAltaPedido();
-	private VistaAccederPedido vistaAccederPedido = new VistaAccederPedido();
+	private VistaAccederBuscarPedido vistaAccederPedido = new VistaAccederBuscarPedido();
 	private JLabel lblPedidos;
 	private JPanel panelPedido;
 
 	public PanelPedido() {
 		setLayout(new BorderLayout(0, 0));
+		JPanel panel = new JPanel();
+		add(panel, BorderLayout.CENTER);
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		botonPedido = new JButton("");
-		add(botonPedido);
-
+		panel.add(botonPedido);
 		lblPedidos = new JLabel("PEDIDOS");
 		lblPedidos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPedidos.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -54,7 +58,7 @@ public class PanelPedido extends JPanel {
 		return vistaAccederAltaPedido;
 	}
 
-	public VistaAccederPedido getVistaAccederPedido() {
+	public VistaAccederBuscarPedido getVistaAccederPedido() {
 		return vistaAccederPedido;
 	}
 }

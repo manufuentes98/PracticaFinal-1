@@ -23,7 +23,6 @@ public class VistaEjecutarBuscarCliente extends JPanel{
 	private JButton btnBuscarCliente;
 	private String [][] data;
 	private String [] nombresColumnas={"Nombre","DNI/CIF","Dirección","Teléfono"};
-	
 	private DefaultTableModel modeloTabla=new DefaultTableModel(data,nombresColumnas);
 
 	/**

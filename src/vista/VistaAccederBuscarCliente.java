@@ -17,7 +17,7 @@ public class VistaAccederBuscarCliente extends JPanel{
 	public VistaAccederBuscarCliente() {
 		setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel = new JLabel("Buscar Cliente");
+		JLabel lblNewLabel = new JLabel(" Administrar Clientes  ");
 		lblNewLabel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("David", Font.BOLD, 22));

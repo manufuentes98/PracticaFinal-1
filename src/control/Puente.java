@@ -2,14 +2,12 @@ package control;
 
 import javax.swing.JPanel;
 import acciones.AddLinea;
-import acciones.BorrarCliente;
 import acciones.BuscarArticulo;
 import acciones.BuscarClienteKey;
 import acciones.GuardarCliente;
 import acciones.ListenerAccederAltaArticulo;
 import acciones.ListenerAccederAltaCliente;
 import acciones.ListenerAccederAltaPedido;
-import acciones.ListenerAccederBorrarCliente;
 import acciones.ListenerAccederBuscarArticulo;
 import acciones.ListenerAccederBuscarCliente;
 import acciones.ListenerAccederBuscarPedido;
@@ -69,15 +67,12 @@ public class Puente extends VistaPrincipal {
 		this.panelCliente.getBotonCliente().addActionListener(new ListenerCliente(this));
 		
 		this.panelCliente.getBtnAltaCliente().addActionListener(new ListenerAccederAltaCliente(this));
-		this.panelCliente.getBtnBorrarCliente().addActionListener(new ListenerAccederBorrarCliente(this));
 		this.panelCliente.getBtnBuscarCliente().addActionListener(new ListenerAccederBuscarCliente(this));
 		
 		this.mntmBuscarCliente.addActionListener(new ListenerAccederBuscarCliente(this));
 		this.mntmDarAltaCliente.addActionListener(new ListenerAccederAltaCliente(this));
-		this.mntmBorrarCliente.addActionListener(new ListenerAccederBorrarCliente(this));
 		
 		this.getVistaAccederAltaCliente().getVistaEjecutarAltaCliente().getBtnValidar().addActionListener(new GuardarCliente(this));
-		this.getVistaAccederBorrarCliente().getVistaEjecutarBorrarCliente().getBtnValidar().addActionListener(new BorrarCliente(this));
 		this.getVistaAccederBuscarCliente().getVistaEjecutarBuscarCliente().getTextField().addKeyListener(new BuscarClienteKey(this));
 	}
 

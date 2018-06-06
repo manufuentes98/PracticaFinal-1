@@ -1,5 +1,6 @@
 package acciones;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -14,7 +15,6 @@ import vista.VistaEjecutarBuscarCliente;
 public class ListenerAccederBuscarCliente implements ActionListener{
 
 	private Puente puente;
-	private VistaEjecutarBuscarCliente vistaEjecutarBuscarCliente;
 
 	public ListenerAccederBuscarCliente(Puente puente) {
 		super();
@@ -24,9 +24,8 @@ public class ListenerAccederBuscarCliente implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		puente.getContentPane().removeAll();
+		puente.getContentPane().setLayout(new GridLayout(1, 1, 0, 0));
 		puente.getContentPane().add(puente.getVistaEjecutarBuscarCliente());
-VistaEjecutarBuscarCliente vista = puente.getVistaAccederBuscarCliente().getVistaEjecutarBuscarCliente();
-		
 		ArrayList<Cliente> clientes = this.puente.getLogica().getDatos().getClientes();
 		while (this.puente.getModeloTabla().getRowCount() > 0) {
 			this.puente.getModeloTabla().removeRow(0);
@@ -45,11 +44,7 @@ VistaEjecutarBuscarCliente vista = puente.getVistaAccederBuscarCliente().getVist
 	}
 
 	public VistaEjecutarBuscarCliente getVistaEjecutarBuscarCliente() {
-		return vistaEjecutarBuscarCliente;
-	}
-
-	public void setVistaEjecutarBuscarCliente(VistaEjecutarBuscarCliente vistaEjecutarBuscarCliente) {
-		this.vistaEjecutarBuscarCliente = vistaEjecutarBuscarCliente;
+		return this.getVistaEjecutarBuscarCliente();
 	}
 	
 

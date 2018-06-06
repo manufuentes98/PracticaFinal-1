@@ -26,7 +26,7 @@ public class VistaAccederBuscarArticulo extends JPanel {
 
 	public VistaAccederBuscarArticulo() {
 		setLayout(new BorderLayout(0, 0));
-		JLabel lblBuscarArticulo = new JLabel("Buscar Articulo");
+		JLabel lblBuscarArticulo = new JLabel("Administrar articulos");
 		lblBuscarArticulo.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		lblBuscarArticulo.setFont(new Font("David", Font.BOLD, 22));
 		lblBuscarArticulo.setHorizontalAlignment(SwingConstants.CENTER);
