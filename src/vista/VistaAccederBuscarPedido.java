@@ -1,5 +1,8 @@
 package vista;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EtchedBorder;
+
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -10,17 +13,19 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.BorderLayout;
+import java.awt.Font;
+
 import javax.swing.ImageIcon;
 
-public class VistaAccederPedido extends JPanel {
+public class VistaAccederBuscarPedido extends JPanel {
 	private JButton btnConsultarPedidos;
 	private VistaEjecutarBuscarPedido vistaEjecutarBuscarPedido;
 	
 
-	public VistaAccederPedido() {
+	public VistaAccederBuscarPedido() {
 		vistaEjecutarBuscarPedido= new VistaEjecutarBuscarPedido();
-		 btnConsultarPedidos = new JButton("\r\n");
-		btnConsultarPedidos.setIcon(new ImageIcon(VistaAccederPedido.class.getResource("/com/sun/javafx/webkit/prism/resources/panIcon.png")));
+		btnConsultarPedidos = new JButton("");
+		btnConsultarPedidos.setIcon(new ImageIcon(VistaAccederBuscarPedido.class.getResource("/com/sun/javafx/webkit/prism/resources/panIcon.png")));
 		btnConsultarPedidos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -29,6 +34,9 @@ public class VistaAccederPedido extends JPanel {
 		add(btnConsultarPedidos, BorderLayout.CENTER);
 		
 		JLabel lblNewLabel = new JLabel("ConsultarPedidos");
+		lblNewLabel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		lblNewLabel.setFont(new Font("David", Font.BOLD, 22));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblNewLabel, BorderLayout.SOUTH);
 	}
 

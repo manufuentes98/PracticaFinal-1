@@ -17,7 +17,6 @@ public class PanelCliente extends JPanel {
 	private JButton BotonCliente;
 	private VistaAccederAltaCliente vistaAccederAltaCliente = new VistaAccederAltaCliente();
 	private VistaAccederBuscarCliente vistaAccederBuscarCliente = new VistaAccederBuscarCliente();
-	private VistaAccederBorrarCliente vistaAccederBorrarCliente = new VistaAccederBorrarCliente();
 	private JPanel panel;
 	private JLabel lblClientes;
 
@@ -28,7 +27,6 @@ public class PanelCliente extends JPanel {
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		BotonCliente = new JButton("");
 		panel.add(BotonCliente);
-
 		lblClientes = new JLabel("CLIENTES");
 		lblClientes.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblClientes.setHorizontalAlignment(SwingConstants.CENTER);
@@ -42,28 +40,9 @@ public class PanelCliente extends JPanel {
 	public VistaAccederBuscarCliente getVistaAccederBuscarCliente() {
 		return vistaAccederBuscarCliente;
 	}
-	
 
 	public JPanel getPanel() {
 		return panel;
-	}
-
-	public JTextField getTxtId() {
-		return vistaAccederBorrarCliente.getTxtId();
-	}
-
-	public JTextField getTxtNombre() {
-		return vistaAccederBorrarCliente.getTxtNombre();
-	}
-
-	public JButton getBtnValidar() {
-		return vistaAccederBorrarCliente.getBtnValidar();
-	}
-	
-	
-
-	public JLabel getLblMensaje() {
-		return vistaAccederBorrarCliente.getLblMensaje();
 	}
 
 	public JLabel getLblClientes() {
@@ -82,20 +61,8 @@ public class PanelCliente extends JPanel {
 		return vistaAccederBuscarCliente.getBtnBuscarCliente();
 	}
 
-	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
-		return vistaAccederBorrarCliente;
-	}
-
-	public JButton getBtnBorrarCliente() {
-		return vistaAccederBorrarCliente.getBtnBorrarCliente();
-	}
-
 	public DefaultTableModel getModeloTabla() {
 		return vistaAccederBuscarCliente.getModeloTabla();
-	}
-
-	public VistaEjecutarBorrarCliente getVistaEjecutarBorrarCliente() {
-		return vistaAccederBorrarCliente.getVistaEjecutarBorrarCliente();
 	}
 
 	public VistaEjecutarAltaCliente getVistaEjecutarAltaCliente() {

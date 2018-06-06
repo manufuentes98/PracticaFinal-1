@@ -1,5 +1,6 @@
 package acciones;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,6 +18,7 @@ public class ListenerAccederAltaCliente implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		puente.getContentPane().removeAll();
+		puente.getContentPane().setLayout(new GridLayout(1, 1, 0, 0));
 		puente.getContentPane().add(puente.getVistaEjecutarAltaCliente());
 		Utiles.actualizar(puente);
 

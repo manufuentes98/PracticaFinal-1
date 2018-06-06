@@ -1,17 +1,14 @@
 package vista;
 
 import javax.swing.JPanel;
-import java.awt.FlowLayout;
-import javax.swing.JTextField;
-import javax.swing.BoxLayout;
+import javax.swing.SwingConstants;
+import javax.swing.border.EtchedBorder;
+
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import java.awt.Font;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.awt.event.ActionEvent;
-import javax.swing.ImageIcon;
 
 public class VistaAccederAltaPedido extends JPanel {
 	private JButton btnAccederAltaPedido;
@@ -20,17 +17,13 @@ public class VistaAccederAltaPedido extends JPanel {
 	public VistaAccederAltaPedido() {
 		vistaEjecutarAltaPedido = new VistaEjecutarAltaPedido();
 		btnAccederAltaPedido = new JButton("");
-		// ImageIcon imageIcon= new ImageIcon(new File(pathname))
-		btnAccederAltaPedido.setIcon(new ImageIcon(VistaAccederAltaPedido.class
-				.getResource("/com/sun/javafx/webkit/prism/resources/mediaVolumeThumb.png")));
-		btnAccederAltaPedido.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		setLayout(new BorderLayout(0, 0));
 		add(btnAccederAltaPedido);
 
 		JLabel lblNewLabel = new JLabel("Alta Pedido");
+		lblNewLabel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		lblNewLabel.setFont(new Font("David", Font.BOLD, 22));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblNewLabel, BorderLayout.SOUTH);
 	}
 

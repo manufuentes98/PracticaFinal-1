@@ -29,7 +29,6 @@ public class VistaPrincipal extends JFrame {
 	protected JMenuItem mntmBuscarCliente;
 	protected JMenuItem mntmNuevoPedido;
 	protected JMenuItem mntmBuscarPedido;
-	protected JMenuItem mntmBorrarCliente;
 
 	public VistaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,9 +55,6 @@ public class VistaPrincipal extends JFrame {
 		mntmBuscarCliente = new JMenuItem("Buscar Cliente");
 		mnClientes.add(mntmBuscarCliente);
 		
-		mntmBorrarCliente = new JMenuItem("Borrar Cliente");
-		mnClientes.add(mntmBorrarCliente);
-
 		JMenu mnPedidos = new JMenu("Pedidos");
 		menuBar.add(mnPedidos);
 
@@ -71,7 +67,7 @@ public class VistaPrincipal extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
+		contentPane.setLayout(new GridLayout(0, 3, 0, 0));
 
 		contentPane.add(panelArticulo);
 		contentPane.add(panelCliente);
@@ -115,10 +111,6 @@ public class VistaPrincipal extends JFrame {
 		return panelCliente.getVistaAccederBuscarCliente();
 	}
 
-	public VistaAccederBorrarCliente getVistaAccederBorrarCliente() {
-		return panelCliente.getVistaAccederBorrarCliente();
-	}
-
 	public JTextField getTextBuscarBuscarArticulo() {
 		return panelArticulo.getTextBuscarBuscarArticulo();
 	}
@@ -147,7 +139,7 @@ public class VistaPrincipal extends JFrame {
 		return panelPedido.getVistaAccederAltaPedido();
 	}
 
-	public VistaAccederPedido getVistaAccederPedido() {
+	public VistaAccederBuscarPedido getVistaAccederPedido() {
 		return panelPedido.getVistaAccederPedido();
 	}
 
@@ -163,26 +155,8 @@ public class VistaPrincipal extends JFrame {
 		return panelCliente.getBtnBuscarCliente();
 	}
 
-	
-
-	public JTextField getTxtId() {
-		return panelCliente.getTxtId();
-	}
-
-	public JTextField getTxtNombre() {
-		return panelCliente.getTxtNombre();
-	}
-
-	public JButton getBtnValidar() {
-		return panelCliente.getBtnValidar();
-	}
-
 	public JButton getBotonCliente() {
 		return panelCliente.getBotonCliente();
-	}
-
-	public JButton getBtnBorrarCliente() {
-		return panelCliente.getBtnBorrarCliente();
 	}
 
 	public DefaultTableModel getModeloTabla() {
@@ -192,10 +166,6 @@ public class VistaPrincipal extends JFrame {
 	
 	public VistaEjecutarAltaPedido getVistaEjecutarAltaPedido() {
 		return panelPedido.getVistaEjecutarAltaPedido();
-	}
-
-	public VistaEjecutarBorrarCliente getVistaEjecutarBorrarCliente() {
-		return panelCliente.getVistaEjecutarBorrarCliente();
 	}
 
 	public VistaEjecutarAltaCliente getVistaEjecutarAltaCliente() {

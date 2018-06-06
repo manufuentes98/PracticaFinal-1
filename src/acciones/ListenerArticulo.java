@@ -20,9 +20,8 @@ public class ListenerArticulo implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		puente.getPanelArticulo().remove(puente.getPanelArticulo().getLblArticulos());
-		puente.getPanelArticulo().remove(puente.getPanelArticulo().getPanel());
-		puente.getPanelArticulo().setLayout(new GridLayout(2, 1, 0, 0));
+		puente.getPanelArticulo().removeAll();
+		puente.getPanelArticulo().setLayout(new GridLayout(2, 0, 0, 0));
 		puente.getPanelArticulo().add(puente.getVistaAccederAltaArticulo());
 		puente.getPanelArticulo().add(puente.getVistaAccederBuscarArticulo());
 		Utiles.actualizar(puente);
